@@ -1,0 +1,681 @@
+"","CASE","age","gender","education","job","WHO1","WHO2","WHO3","WHO4","WHO5","FLEXER1","FLEXER2","FLEXER3","FLEXER4","FLEXER5","FLEXER6","FLEXER7","FLEXER8","FLEXER9","FLEXER10"
+"1","1",29,"female","Abitur","Hochschulabschluss",2,1,2,2,1,2,3,2,2,2,2,2,3,2,2
+"2","2",32,"female","Realschule","Ausbildung",4,1,3,3,4,4,3,4,4,1,2,3,3,2,2
+"3","3",42,"female","Abitur","Hochschulabschluss",4,3,4,2,4,1,2,2,2,2,2,1,4,2,1
+"4","4",38,"female","Abitur","Ausbildung",4,3,2,2,5,1,1,3,3,1,1,2,4,3,1
+"5","5",32,"female","Abitur","Ausbildung",2,2,1,0,1,4,1,1,2,3,3,3,1,1,2
+"6","6",29,"male","Abitur","Hochschulabschluss",1,2,1,0,2,3,2,3,2,3,3,3,2,1,2
+"7","7",31,"female","Abitur","Hochschulabschluss",NA,NA,4,NA,NA,1,4,4,2,2,2,2,4,4,4
+"8","8",46,"female","Realschule","Ausbildung",1,2,3,1,2,3,3,2,3,3,3,3,3,2,2
+"9","9",45,"female","Abitur","Promotion",2,1,2,2,3,2,1,3,1,1,2,1,3,3,2
+"10","10",22,"male","Realschule","Ausbildung",3,2,1,2,4,3,2,2,3,4,3,2,3,2,3
+"11","11",22,"female","Realschule","none",4,4,3,3,3,3,1,3,2,3,2,2,3,1,1
+"12","12",43,"female","Realschule","Ausbildung",3,1,1,0,2,4,4,4,4,4,4,4,4,4,4
+"14","14",50,"male","Realschule","Ausbildung",4,1,2,0,4,3,3,3,2,3,3,3,4,4,2
+"15","15",54,"male","Abitur","Ausbildung",1,2,2,1,1,3,2,2,4,3,4,3,4,2,3
+"19","19",53,"male","Abitur","Hochschulabschluss",1,2,1,2,1,3,3,3,3,3,3,3,2,2,2
+"20","20",39,"female","Abitur","none",3,3,2,1,3,3,4,4,3,3,3,3,4,2,3
+"22","22",31,"female","Abitur","Hochschulabschluss",2,3,1,1,2,2,3,3,2,2,2,2,3,2,2
+"23","23",41,"female","Abitur","Hochschulabschluss",4,4,3,4,1,4,2,3,2,2,2,3,2,2,2
+"25","25",43,"female","Abitur","Promotion",1,1,2,1,3,3,2,1,2,3,4,3,3,3,3
+"27","27",41,"female","Abitur","Hochschulabschluss",1,2,2,0,1,2,4,4,3,3,3,3,4,4,2
+"30","30",33,"female","Abitur","Ausbildung",1,1,1,1,1,4,2,1,3,4,4,3,2,1,2
+"33","33",28,"female","Abitur","Hochschulabschluss",2,2,3,2,4,2,2,2,3,3,3,2,1,2,2
+"34","34",34,"female","Abitur","Hochschulabschluss",3,2,2,NA,2,3,2,3,3,2,2,3,2,2,2
+"39","39",40,"male","Abitur","Hochschulabschluss",3,3,1,1,2,4,4,4,4,4,4,4,4,4,4
+"43","43",36,"female","Abitur","Hochschulabschluss",1,1,3,1,2,3,2,2,2,2,3,2,4,2,2
+"44","44",33,"female","Abitur","Hochschulabschluss",4,2,4,2,5,3,4,4,2,2,2,2,4,4,2
+"46","46",43,"female","Abitur","Hochschulabschluss",3,3,3,1,4,3,4,4,3,3,3,4,4,4,3
+"49","49",41,"female","Abitur","Hochschulabschluss",1,4,3,2,3,2,3,2,2,3,2,2,4,1,1
+"51","51",31,"male","Abitur","Hochschulabschluss",1,3,1,4,1,2,2,3,2,2,3,2,4,3,2
+"52","52",37,"male","Abitur","Fachhochschulabschluss",1,1,1,0,1,3,4,4,4,3,2,2,4,4,3
+"53","53",27,"male","Abitur","Hochschulabschluss",4,2,1,0,1,2,3,4,1,2,2,1,3,4,1
+"55","55",27,"female","Abitur","Ausbildung",1,1,1,0,2,2,3,3,2,2,3,2,3,3,2
+"57","57",46,"female","Abitur","Ausbildung",4,3,2,4,4,3,4,3,3,2,1,2,4,4,2
+"60","60",29,"female","Abitur","Ausbildung",1,2,1,1,2,3,4,3,1,1,2,2,4,4,2
+"61","61",33,"female","Abitur","Ausbildung",2,2,2,2,2,2,2,3,2,3,2,2,3,2,2
+"62","62",46,"female","Abitur","Ausbildung",1,1,2,0,1,1,2,2,2,3,2,1,4,3,1
+"63","63",42,"female","Abitur","Ausbildung",4,4,4,2,4,2,2,2,2,2,2,2,3,2,2
+"64","64",34,"female","Abitur","Hochschulabschluss",1,1,0,0,0,3,3,4,3,4,4,3,4,3,2
+"65","65",36,"female","Abitur","Fachhochschulabschluss",2,1,2,2,3,3,3,3,3,3,3,3,3,3,3
+"68","68",18,"male","Abitur","none",4,4,4,3,4,1,3,4,2,1,1,1,3,3,1
+"71","71",46,"female","Abitur","none",1,2,1,1,2,2,2,2,2,2,2,2,1,2,2
+"73","73",30,"female","Abitur","Hochschulabschluss",1,1,1,2,1,3,4,4,3,2,2,2,3,2,2
+"74","74",31,"female","Abitur","Ausbildung",4,4,3,3,3,2,4,2,2,2,2,2,4,2,2
+"75","75",43,"male","Abitur","Hochschulabschluss",4,3,3,2,4,2,2,1,3,2,2,1,4,4,2
+"77","77",65,"male","Abitur","Hochschulabschluss",1,1,0,3,2,3,4,4,4,4,4,4,4,4,2
+"79","79",38,"female","Abitur","Ausbildung",4,3,4,2,3,3,4,4,4,3,4,4,4,4,3
+"81","81",33,"male","Abitur","Hochschulabschluss",4,4,3,3,3,2,3,3,2,3,1,2,4,3,1
+"82","82",29,"female","Abitur","Ausbildung",2,1,1,1,3,3,3,3,2,2,2,2,3,3,2
+"83","83",38,"male","Abitur","Fachhochschulabschluss",1,3,1,1,4,3,2,3,4,3,1,3,4,4,2
+"84","84",22,"female","Abitur","Hochschulabschluss",3,2,2,2,4,3,4,4,3,3,3,3,4,4,3
+"87","87",39,"female","Hauptschule","none",1,1,3,0,2,2,3,4,4,2,2,2,3,3,2
+"89","89",21,"female","Abitur","none",1,1,2,0,0,3,3,3,4,3,2,3,4,2,3
+"90","90",73,"male","Abitur","Hochschulabschluss",4,2,4,1,4,2,4,3,2,3,2,3,4,3,4
+"91","91",40,"female","Abitur","none",3,3,3,3,4,3,4,3,3,2,2,2,3,2,2
+"93","93",20,"male","Abitur","none",3,4,3,5,4,2,2,2,4,3,2,3,4,3,2
+"94","94",38,"male","Abitur","Hochschulabschluss",0,0,0,0,0,3,2,2,3,3,3,3,3,4,3
+"95","95",26,"female","Abitur","Hochschulabschluss",3,4,3,4,3,2,4,4,2,2,1,2,4,4,2
+"96","96",38,"female","Abitur","Fachhochschulabschluss",2,2,2,2,2,4,2,3,4,3,3,3,2,2,3
+"97","97",30,"male","Abitur","Ausbildung",4,3,4,3,3,3,2,2,2,3,3,2,2,1,2
+"98","98",22,"female","Abitur","none",1,1,1,1,2,3,1,1,3,3,3,3,2,1,3
+"99","99",21,"female","Abitur","none",4,3,3,1,4,2,1,1,1,3,3,2,2,1,2
+"100","100",22,"male","Abitur","Ausbildung",1,0,1,0,1,2,1,1,2,3,4,2,1,1,1
+"101","101",24,"female","Abitur","Ausbildung",1,0,0,0,0,3,4,4,3,3,4,4,4,4,2
+"102","102",60,"male","Abitur","Hochschulabschluss",4,4,4,4,4,1,2,3,1,1,1,1,3,3,1
+"105","105",24,"female","Abitur","Hochschulabschluss",3,2,3,4,2,3,4,2,4,3,2,2,3,2,2
+"106","106",25,"female","Abitur","none",0,0,1,0,5,3,4,4,2,3,3,2,3,1,2
+"107","107",25,"male","Abitur","Hochschulabschluss",0,4,1,0,2,1,1,2,1,1,3,2,2,1,2
+"108","108",41,"female","Abitur","Fachhochschulabschluss",3,1,1,3,NA,2,4,4,2,2,3,2,4,4,2
+"110","110",43,"female","Abitur","Promotion",3,3,3,2,3,2,2,4,1,2,2,2,3,4,1
+"111","111",25,"female","Abitur","Hochschulabschluss",3,4,3,3,3,3,3,4,4,3,1,3,3,4,1
+"113","113",22,"female","Abitur","none",3,4,4,3,5,1,1,1,1,1,1,1,1,1,1
+"115","115",19,"male","Abitur","none",1,1,3,1,3,4,1,2,3,3,4,3,2,1,2
+"116","116",22,"female","Abitur","Ausbildung",4,1,4,3,4,3,1,1,2,3,3,2,3,2,3
+"117","117",27,"female","Abitur","none",3,3,3,1,3,2,2,2,2,3,2,2,1,1,1
+"118","118",38,"female","Realschule","Ausbildung",4,4,3,3,3,3,3,3,2,2,2,2,4,4,3
+"121","121",30,"male","Abitur","none",3,3,3,3,2,2,4,4,4,2,2,2,3,3,2
+"123","123",21,"male","Abitur","none",4,2,4,4,4,3,4,4,4,3,3,3,4,2,2
+"126","126",22,"female","Abitur","none",1,0,2,1,3,3,3,2,4,3,3,4,3,2,4
+"127","127",21,"female","Abitur","none",2,1,1,1,1,2,3,3,2,3,3,3,4,4,2
+"128","128",19,"female","Abitur","none",3,2,1,1,2,3,2,3,2,1,3,3,2,2,2
+"129","129",21,"female","Abitur","none",1,1,2,0,1,4,4,4,4,4,4,4,3,2,2
+"130","130",41,"male","Abitur","Hochschulabschluss",4,4,2,1,4,3,3,4,4,2,2,2,3,4,2
+"131","131",29,"female","Abitur","Hochschulabschluss",2,2,2,1,3,2,3,3,2,2,2,2,3,3,1
+"132","132",25,"male","Abitur","Ausbildung",4,2,4,1,4,1,3,3,2,2,2,2,4,4,2
+"133","133",19,"male","Abitur","none",1,4,1,1,2,4,2,2,3,2,3,2,4,2,1
+"134","134",22,"male","Abitur","none",4,4,4,3,2,3,3,4,2,3,2,3,3,4,4
+"137","137",37,"male","Abitur","Hochschulabschluss",1,1,2,2,2,3,3,3,4,3,3,3,3,4,3
+"138","138",23,"female","Abitur","none",1,1,1,0,1,3,2,3,3,2,4,3,3,3,3
+"139","139",32,"female","Abitur","Hochschulabschluss",0,1,0,1,0,2,3,4,3,2,4,4,2,2,2
+"140","140",21,"female","Realschule","Ausbildung",3,3,3,3,4,3,2,2,2,2,2,2,4,3,2
+"141","141",55,"female","Realschule","Fachhochschulabschluss",2,1,3,4,3,2,4,3,1,3,2,1,4,4,1
+"142","142",26,"female","Abitur","Hochschulabschluss",3,1,4,0,3,4,3,4,3,2,2,2,2,3,2
+"143","143",31,"male","Abitur","Hochschulabschluss",2,2,2,1,2,3,2,2,3,3,3,2,3,2,3
+"144","144",67,"male","Abitur","Hochschulabschluss",5,4,4,4,5,2,4,4,4,2,2,2,4,4,2
+"145","145",25,"female","Abitur","none",4,3,2,0,5,2,2,1,1,1,1,1,4,2,1
+"146","146",20,"male","Abitur","none",1,1,1,2,0,3,2,3,3,3,3,3,2,2,3
+"147","147",24,"female","Abitur","Hochschulabschluss",4,5,3,3,2,3,4,4,2,3,2,3,4,1,2
+"148","148",34,"female","Abitur","Hochschulabschluss",4,2,3,1,2,2,4,4,3,3,2,3,2,3,2
+"151","151",21,"female","Abitur","none",1,0,2,0,0,3,1,2,4,4,4,4,4,1,2
+"153","153",27,"female","Abitur","Hochschulabschluss",1,2,2,0,2,2,3,4,4,3,3,2,3,2,2
+"154","154",27,"female","Abitur","Hochschulabschluss",3,3,2,2,3,2,3,4,3,3,2,4,4,3,2
+"155","155",21,"female","Abitur","none",4,3,3,2,4,1,2,2,2,2,1,1,3,2,1
+"156","156",28,"female","Abitur","Hochschulabschluss",3,1,1,3,4,2,2,4,2,3,2,3,4,3,3
+"157","157",24,"female","Abitur","none",3,2,3,2,2,3,2,2,4,3,3,2,3,1,2
+"158","158",69,"male","Abitur","Hochschulabschluss",4,3,4,4,5,2,3,3,2,2,2,2,3,3,2
+"159","159",33,"male","Abitur","Hochschulabschluss",3,2,3,1,2,2,1,2,2,3,3,2,1,1,2
+"160","160",28,"male","Abitur","Hochschulabschluss",3,1,4,3,5,1,1,1,2,1,3,2,2,4,2
+"161","161",47,"female","Abitur","Ausbildung",2,1,2,1,1,3,3,2,3,3,2,3,3,2,2
+"162","162",32,"divers","Abitur","Hochschulabschluss",1,2,2,0,4,4,4,4,4,1,4,3,2,1,4
+"163","163",22,"female","Abitur","none",4,3,4,4,5,3,3,4,3,2,2,3,4,2,1
+"164","164",28,"female","Abitur","Ausbildung",2,1,2,1,2,2,2,2,1,2,2,2,2,2,1
+"166","166",22,"female","Abitur","none",3,2,1,2,4,3,4,2,4,3,3,4,4,2,3
+"168","168",40,"female","Abitur","Hochschulabschluss",4,4,4,3,4,2,2,3,2,1,2,2,2,3,2
+"171","171",18,"female","Abitur","none",4,3,3,3,3,3,3,4,3,2,2,3,4,2,2
+"172","172",23,"female","Abitur","none",4,2,3,1,4,4,3,3,3,4,4,4,2,1,3
+"173","173",25,"male","Realschule","Ausbildung",4,4,4,4,5,2,2,3,3,4,4,2,1,1,1
+"174","174",35,"male","Abitur","Ausbildung",4,2,3,4,4,3,2,2,2,3,3,2,2,2,2
+"175","175",22,"female","Abitur","none",4,4,4,3,4,1,4,4,1,1,1,1,4,4,1
+"176","176",22,"female","Abitur","none",4,3,4,3,4,2,3,2,2,2,2,2,3,2,2
+"177","177",20,"female","Abitur","none",3,3,4,4,4,3,4,4,4,3,2,2,2,2,2
+"178","178",21,"female","Abitur","none",4,3,2,3,4,2,2,3,2,1,1,1,3,2,1
+"179","179",19,"female","Abitur","none",2,1,1,0,4,2,2,3,1,1,2,2,4,2,1
+"180","180",64,"male","Abitur","Hochschulabschluss",4,4,4,5,5,2,3,2,2,2,2,2,4,4,2
+"186","186",24,"female","Abitur","none",3,3,1,3,1,3,2,3,3,2,2,2,3,1,2
+"187","187",24,"female","Abitur","Hochschulabschluss",2,1,3,1,2,3,3,4,3,2,2,2,4,2,2
+"188","188",26,"female","Abitur","Hochschulabschluss",4,4,4,4,4,2,2,2,2,1,2,1,1,2,1
+"189","189",18,"female","Abitur","none",3,2,4,3,1,3,4,4,4,3,3,4,3,2,3
+"191","191",23,"female","Abitur","none",2,1,1,1,3,2,3,3,3,2,3,3,2,4,3
+"193","193",28,"female","Abitur","none",1,1,1,0,0,4,1,2,2,2,4,2,2,2,1
+"194","194",26,"female","Abitur","none",3,2,2,1,2,2,1,2,2,2,2,2,3,2,2
+"196","196",71,"female","Abitur","Hochschulabschluss",5,4,4,4,4,2,2,2,2,1,1,2,3,3,2
+"197","197",30,"female","Abitur","Ausbildung",3,3,3,1,2,3,4,3,1,2,2,2,4,3,1
+"198","198",23,"male","Abitur","none",4,3,3,3,4,2,3,3,3,2,1,2,4,2,2
+"200","200",34,"female","Abitur","Fachhochschulabschluss",4,4,4,3,5,2,4,3,1,1,1,1,3,2,1
+"201","201",31,"male","Abitur","Hochschulabschluss",4,4,3,2,4,3,2,3,3,2,2,2,3,3,2
+"202","202",22,"male","Abitur","none",4,3,2,2,3,4,4,4,4,4,2,4,4,4,4
+"203","203",24,"female","Abitur","none",4,3,2,1,2,2,2,3,2,3,3,2,4,3,2
+"204","204",20,"female","Abitur","none",1,0,1,0,0,3,3,3,4,4,2,3,1,1,3
+"205","205",41,"female","Abitur","Hochschulabschluss",3,3,3,4,4,2,1,2,3,3,3,3,3,4,1
+"206","206",27,"female","Abitur","Hochschulabschluss",4,2,4,3,5,2,3,3,2,2,1,1,1,1,1
+"210","210",43,"female","Abitur","Fachhochschulabschluss",2,3,1,1,2,2,4,4,2,3,2,2,4,4,2
+"211","211",25,"female","Abitur","Hochschulabschluss",3,2,2,1,2,2,4,4,3,2,3,3,3,2,2
+"212","212",27,"male","Abitur","none",1,1,2,2,4,3,3,3,2,3,3,3,4,1,2
+"215","215",30,"divers","Abitur","Promotion",4,2,2,1,2,4,3,4,4,3,3,4,2,2,3
+"216","216",39,"male","Abitur","Hochschulabschluss",1,1,1,1,4,3,4,4,2,3,3,2,4,4,2
+"217","217",19,"female","Abitur","none",4,3,3,2,4,2,3,2,2,1,1,2,4,3,2
+"218","218",72,"female","Realschule","Ausbildung",3,2,2,3,3,3,3,3,3,3,3,2,4,4,2
+"220","220",20,"female","Abitur","none",1,3,1,2,4,2,4,4,2,2,1,2,3,2,2
+"223","223",68,"female","Abitur","Hochschulabschluss",4,4,4,4,4,2,2,2,2,2,2,2,3,3,2
+"224","224",44,"female","Abitur","Hochschulabschluss",1,1,0,0,1,4,3,2,3,3,3,3,2,3,2
+"225","225",18,"female","Realschule","none",1,1,1,1,1,1,1,3,3,4,3,1,1,2,1
+"226","226",26,"female","Abitur","none",5,1,4,2,5,2,2,1,1,1,1,2,2,1,1
+"227","227",20,"female","Abitur","none",1,1,1,1,1,2,2,2,2,3,3,2,2,2,2
+"228","228",58,"female","Abitur","Promotion",4,2,4,3,4,2,3,2,2,2,2,1,3,3,2
+"230","230",22,"male","Abitur","none",3,2,2,0,4,3,4,4,3,3,2,2,4,4,3
+"231","231",45,"female","Abitur","Hochschulabschluss",3,2,1,1,2,4,4,4,4,4,4,4,4,4,4
+"232","232",26,"female","Abitur","none",4,4,4,4,4,1,1,2,2,1,1,1,3,2,1
+"233","233",20,"female","Abitur","none",4,1,4,4,4,2,4,4,3,1,1,1,4,4,2
+"234","234",19,"female","Abitur","none",1,1,1,1,1,3,1,3,4,4,4,3,1,2,3
+"236","236",23,"male","Abitur","none",4,NA,3,3,1,3,2,2,3,2,2,3,4,3,1
+"237","237",38,"female","Abitur","Hochschulabschluss",1,0,0,0,1,4,3,3,4,3,4,4,4,3,3
+"238","238",20,"female","Abitur","none",1,1,2,1,1,4,2,4,3,4,3,3,2,3,4
+"239","239",41,"female","Abitur","Ausbildung",3,3,3,4,5,2,4,4,2,2,2,2,3,3,1
+"240","240",35,"female","Abitur","Hochschulabschluss",1,0,2,1,4,2,1,2,3,2,2,2,3,3,2
+"242","242",24,"male","Abitur","Hochschulabschluss",2,3,2,3,2,3,3,2,3,3,2,2,2,2,3
+"244","244",22,"female","Abitur","none",1,1,1,3,2,4,2,3,1,2,3,2,4,4,2
+"245","245",35,"male","Abitur","Fachhochschulabschluss",4,2,4,5,5,4,4,4,4,4,4,4,4,4,4
+"246","246",29,"male","Abitur","Ausbildung",3,3,1,2,3,2,2,3,2,2,2,2,3,3,2
+"249","249",20,"female","Abitur","none",0,0,1,1,1,2,2,1,1,2,2,3,1,1,1
+"250","250",20,"female","Abitur","none",4,2,4,4,4,2,1,2,3,2,2,2,1,1,2
+"251","251",21,"female","Abitur","none",4,4,4,4,4,1,2,2,1,3,1,1,3,3,1
+"253","253",20,"female","Abitur","none",1,1,3,2,2,3,3,3,2,2,3,2,3,2,2
+"254","254",26,"female","Abitur","Ausbildung",4,4,4,3,3,3,3,4,2,2,3,2,3,3,2
+"255","255",19,"female","Abitur","none",3,0,1,1,4,4,4,3,3,3,3,4,2,3,2
+"256","256",38,"female","Abitur","Hochschulabschluss",1,3,1,4,4,2,4,4,1,2,1,1,4,4,1
+"257","257",21,"female","Abitur","none",1,1,1,0,1,2,3,3,2,2,1,2,3,2,3
+"258","258",20,"female","Abitur","none",4,1,4,4,4,2,1,2,2,1,2,2,1,1,2
+"259","259",21,"male","Abitur","none",4,3,3,3,4,2,3,3,2,2,3,2,3,1,2
+"261","261",21,"female","Abitur","none",1,1,1,1,2,3,3,3,3,3,4,3,3,3,3
+"263","263",20,"female","Abitur","none",3,1,2,1,3,1,3,3,1,1,1,1,3,1,1
+"264","264",19,"female","Abitur","none",2,3,1,2,3,2,3,3,3,2,2,2,3,3,2
+"265","265",25,"female","Abitur","none",3,1,3,2,4,3,3,4,2,3,2,2,3,2,2
+"266","266",31,"female","Abitur","Ausbildung",4,3,4,4,3,2,3,2,2,2,3,3,4,1,2
+"267","267",19,"female","Abitur","none",4,3,4,4,3,1,1,1,1,1,1,1,1,2,1
+"268","268",30,"male","Abitur","Fachhochschulabschluss",4,3,3,2,5,2,1,1,2,3,2,2,2,3,2
+"269","269",23,"female","Abitur","Hochschulabschluss",2,2,2,2,2,2,2,2,3,2,2,2,1,1,1
+"270","270",18,"female","Abitur","none",3,3,2,2,3,3,4,4,3,2,2,3,4,3,2
+"271","271",18,"female","Abitur","none",3,1,3,2,1,3,4,4,3,2,2,3,4,2,3
+"272","272",20,"female","Abitur","none",4,2,3,4,2,3,3,4,2,2,2,3,3,4,2
+"274","274",35,"female","Abitur","Hochschulabschluss",0,0,1,0,1,3,4,3,3,3,2,2,2,1,3
+"275","275",27,"female","Abitur","Ausbildung",2,1,2,1,3,3,2,2,2,3,2,2,2,2,2
+"277","277",21,"female","Abitur","none",4,2,3,2,1,2,2,3,3,2,2,2,4,3,2
+"278","278",20,"female","Abitur","none",1,1,1,1,2,3,3,4,3,3,3,4,4,4,3
+"279","279",26,"female","Abitur","none",2,1,1,1,2,2,3,3,2,1,3,2,2,1,1
+"280","280",20,"female","Abitur","none",1,1,1,3,0,3,4,4,3,2,2,3,2,4,3
+"281","281",18,"female","Abitur","none",4,3,4,3,3,2,2,3,3,2,2,2,3,3,2
+"282","282",20,"female","Abitur","none",2,1,2,3,2,2,4,3,3,2,2,2,3,3,1
+"283","283",22,"female","Abitur","Ausbildung",3,2,1,3,3,2,2,3,2,2,3,2,3,2,2
+"285","285",34,"female","Abitur","Hochschulabschluss",3,2,2,1,4,2,2,2,2,2,2,1,2,3,2
+"286","286",21,"female","Abitur","none",3,2,1,1,1,3,2,3,3,3,2,2,3,2,3
+"287","287",20,"female","Abitur","none",3,2,1,2,2,2,2,3,1,2,2,1,3,3,1
+"288","288",21,"female","Abitur","none",4,3,3,4,4,2,3,3,2,1,1,2,3,3,1
+"289","289",22,"female","Abitur","none",0,1,1,1,1,3,3,3,3,4,3,3,3,2,3
+"290","290",20,"female","Abitur","none",2,0,0,0,0,3,3,3,2,2,2,3,3,3,2
+"292","292",32,"female","Abitur","Hochschulabschluss",5,5,4,4,4,1,1,1,1,1,1,1,1,1,1
+"293","293",29,"male","Abitur","Ausbildung",1,2,3,4,1,2,3,3,2,2,2,2,3,2,1
+"294","294",20,"female","Abitur","none",1,0,1,0,2,2,2,1,1,1,1,2,3,2,2
+"295","295",25,"female","Abitur","none",2,2,3,0,3,2,3,4,2,1,4,2,4,3,1
+"297","297",20,"female","Abitur","none",3,2,3,1,2,2,3,2,3,2,2,1,3,2,2
+"298","298",19,"female","Abitur","none",3,3,4,2,3,2,3,4,2,1,1,1,3,2,2
+"299","299",20,"female","Abitur","none",2,2,3,2,3,3,4,3,3,3,3,3,4,3,3
+"300","300",20,"female","Abitur","none",1,1,3,1,0,3,2,3,2,3,3,2,2,1,2
+"301","301",20,"male","Abitur","none",4,4,3,3,5,1,4,1,1,1,1,1,4,4,1
+"302","302",22,"male","Abitur","Ausbildung",2,2,4,2,2,2,3,2,4,2,3,2,3,2,3
+"303","303",21,"female","Abitur","none",2,1,1,1,2,2,2,2,2,2,2,2,2,2,2
+"304","304",20,"female","Abitur","none",3,2,3,1,1,2,2,2,1,1,1,2,1,1,1
+"305","305",20,"female","Abitur","none",4,3,4,4,4,1,4,4,2,2,2,2,4,4,2
+"306","306",18,"female","Abitur","none",4,3,4,4,4,3,2,3,3,2,2,3,3,2,2
+"307","307",28,"female","Abitur","Fachhochschulabschluss",2,1,2,1,3,2,2,3,3,1,2,2,2,2,1
+"308","308",21,"male","Abitur","none",2,1,3,1,1,2,1,2,1,2,1,1,1,2,2
+"310","310",50,"male","Abitur","Hochschulabschluss",3,4,4,0,4,1,1,2,1,1,1,1,2,1,1
+"311","311",34,"male","Abitur","Fachhochschulabschluss",4,4,4,3,3,2,3,4,3,2,2,2,3,3,1
+"313","313",50,"female","Abitur","Hochschulabschluss",4,3,5,4,4,1,4,4,3,1,2,1,3,3,1
+"314","314",21,"female","Abitur","none",3,1,3,1,3,1,2,3,2,2,2,2,3,2,1
+"316","316",26,"female","Abitur","Hochschulabschluss",2,1,2,1,2,3,2,3,3,4,2,2,3,2,2
+"317","317",30,"female","Abitur","Hochschulabschluss",4,3,3,1,4,3,3,2,2,3,2,2,3,3,3
+"318","318",47,"male","Abitur","Hochschulabschluss",4,4,3,3,4,2,2,3,2,3,3,2,2,3,2
+"319","319",23,"female","Abitur","none",4,3,3,3,3,3,2,1,3,3,2,2,1,1,2
+"320","320",22,"female","Abitur","none",4,4,4,4,5,1,4,4,4,3,1,1,4,4,1
+"321","321",21,"female","Abitur","none",4,3,4,4,4,2,3,4,3,2,4,3,4,2,2
+"323","323",19,"female","Abitur","none",2,2,3,3,4,2,3,2,2,2,1,2,3,3,2
+"325","325",20,"female","Abitur","none",3,1,2,3,2,2,3,3,2,2,2,2,1,3,2
+"327","327",22,"female","Abitur","none",3,2,1,2,1,1,3,2,1,4,1,1,2,1,2
+"329","329",26,"female","Abitur","Ausbildung",2,NA,1,3,3,3,3,3,4,2,3,2,4,3,1
+"330","330",19,"female","Abitur","none",4,4,2,1,2,3,3,3,2,2,2,1,3,2,1
+"332","332",20,"female","Abitur","none",4,4,4,3,3,3,2,3,2,2,3,3,2,1,2
+"333","333",33,"female","Abitur","Hochschulabschluss",4,4,4,0,4,3,3,3,3,3,3,3,3,3,3
+"334","334",21,"female","Abitur","none",2,0,1,0,3,2,2,3,1,1,2,1,2,2,1
+"335","335",34,"female","Abitur","Ausbildung",4,4,3,3,3,2,2,3,3,2,2,2,3,3,2
+"337","337",27,"male","Abitur","Hochschulabschluss",4,2,3,3,2,4,2,3,3,3,2,2,3,4,3
+"339","339",42,"female","Abitur","Hochschulabschluss",4,1,4,0,5,3,4,4,2,2,2,3,4,1,3
+"340","340",23,"female","Abitur","none",1,0,2,3,3,3,2,2,3,3,2,3,1,2,3
+"341","341",22,"female","Abitur","Ausbildung",2,1,2,1,2,4,4,4,4,4,4,4,4,4,4
+"342","342",20,"female","Abitur","none",1,0,3,0,3,3,3,2,4,2,3,3,2,3,2
+"343","343",21,"female","Abitur","none",3,3,2,4,1,3,2,1,3,4,4,3,2,1,2
+"344","344",38,"divers","Abitur","Hochschulabschluss",4,3,4,2,3,2,2,3,2,1,1,2,3,3,1
+"348","348",26,"female","Abitur","none",3,2,2,3,4,3,3,2,3,2,3,2,2,2,1
+"349","349",20,"female","Abitur","none",4,4,4,3,4,2,2,3,2,2,1,2,2,2,2
+"350","350",23,"female","Abitur","Hochschulabschluss",3,0,4,1,1,1,1,1,3,1,1,1,1,1,1
+"351","351",38,"female","Abitur","Ausbildung",1,1,1,0,2,1,2,2,2,1,3,1,4,2,1
+"352","352",27,"male","Abitur","Hochschulabschluss",4,3,2,1,4,3,4,4,4,4,4,4,4,4,3
+"353","353",36,"female","Abitur","Fachhochschulabschluss",3,2,2,2,2,3,3,3,3,2,2,3,3,3,2
+"354","354",21,"female","Abitur","none",3,1,2,4,3,2,3,3,2,1,1,2,3,3,2
+"355","355",29,"male","Abitur","none",1,1,1,0,2,2,3,3,3,3,4,2,2,4,1
+"356","356",26,"female","Abitur","none",3,4,4,3,4,2,2,3,1,2,2,2,3,2,1
+"357","115",25,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,3,4,1,4,2,2,3,2,1,1,1,2,1,1
+"358","120",25,"female","Fachhochschul-/Hochschulabschluss","StudentIn",3,4,2,0,4,1,1,1,1,2,2,1,2,1,1
+"359","122",28,"male","Fachhochschul-/Hochschulabschluss","StudentIn",2,2,2,1,1,2,1,2,3,2,2,2,2,2,2
+"360","123",31,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",4,4,2,2,4,2,2,2,3,3,2,3,3,4,2
+"361","129",52,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,3,3,4,3,4,4,4,4,4,4,4,4,4
+"362","130",24,"female","Abitur","Angestellte/r Rettungsdienst",2,1,2,0,3,2,3,3,2,1,1,1,3,3,1
+"363","132",28,"male","Abitur","Angestellte/r Rettungsdienst",3,1,1,1,2,1,3,3,2,2,2,3,4,4,1
+"364","133",33,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,1,1,1,1,2,2,3,2,3,1,1,4,4,1
+"365","134",22,"male","Abitur","StudentIn",3,1,4,1,3,2,2,3,2,2,2,2,4,4,2
+"366","138",22,"female","Abitur","StudentIn",1,1,1,0,1,4,2,4,4,1,4,4,4,1,1
+"367","140",25,"female","Abitur","Angestellte/r Rettungsdienst",4,4,4,3,3,2,2,2,2,2,2,2,2,2,2
+"368","142",24,"male","Abitur","Angestellte/r, sonstiges",1,0,0,0,2,2,4,3,3,2,2,2,3,3,2
+"369","145",24,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",4,1,2,0,3,3,2,3,2,2,2,3,2,3,3
+"371","163",23,"male","Abgeschlossene Lehre","Angestellte/r, sonstiges",2,3,3,1,2,4,2,3,4,4,4,4,4,3,4
+"372","170",34,"male","Abitur","Angestellte/r Rettungsdienst",1,1,0,0,1,3,3,3,4,4,3,3,4,3,4
+"373","171",30,"male","Hauptschulabschluss","Angestellte/r, sonstiges",1,2,1,1,4,1,2,2,2,1,1,1,3,4,1
+"374","173",38,"male","Abitur","Beamte/r, sonstiges",4,3,3,1,4,3,3,3,3,3,3,3,3,3,3
+"375","184",45,"male","Abitur","Angestellte/r Rettungsdienst",2,1,0,0,1,3,2,3,3,3,3,4,4,3,3
+"376","187",54,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",2,2,2,1,2,2,2,2,1,2,2,1,3,3,1
+"379","192",23,"female","Mittlere Reife","Angestellte/r Rettungsdienst",1,0,0,0,4,1,1,1,1,1,1,1,4,4,1
+"380","196",36,"male","Abitur","Angestellte/r, sonstiges",4,5,4,2,1,2,2,2,2,2,2,2,2,2,2
+"381","201",25,"female","Abitur","In Ausbildung",3,2,3,1,2,2,3,4,3,1,1,2,2,2,1
+"383","216",23,"female","Abitur","Angestellte/r Rettungsdienst",1,1,1,2,2,3,2,3,2,3,2,3,2,2,2
+"384","218",29,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,4,4,1,2,2,1,2,1,1,3,3,2
+"385","221",26,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",4,3,4,2,3,1,1,1,1,1,1,1,3,3,1
+"386","224",30,"male","Fachabitur","Angestellte/r Rettungsdienst",4,2,2,4,1,3,1,1,1,2,1,1,1,1,1
+"387","227",29,"male","Abitur","StudentIn",3,3,2,2,3,2,2,2,2,2,2,2,3,2,1
+"388","228",22,"female","Abitur","In Ausbildung",3,2,1,1,4,2,4,4,2,1,1,2,4,2,2
+"389","233",26,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,4,4,2,4,2,3,3,2,2,3,3,3,2
+"390","236",45,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",4,4,4,4,4,1,2,2,2,2,2,2,4,3,1
+"391","240",36,"female","Mittlere Reife","Angestellte/r, sonstiges",4,4,4,4,4,2,2,3,3,3,2,3,3,3,2
+"393","242",24,"male","Abitur","Angestellte/r, sonstiges",4,3,3,2,4,3,2,2,2,3,2,2,2,1,2
+"395","247",23,"male","Abitur","In Ausbildung",4,4,4,5,3,1,3,1,2,2,1,1,2,3,1
+"396","248",18,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,3,4,2,2,3,2,1,1,2,2,3,2
+"398","257",29,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",1,2,0,0,3,2,2,2,4,2,1,3,1,1,1
+"399","270",26,"female","Abitur","Angestellte/r Rettungsdienst",4,4,4,4,4,1,2,3,1,1,1,1,3,3,1
+"400","272",19,"female","Abitur","Angestellte/r Rettungsdienst",2,1,1,0,1,1,4,4,1,1,1,1,4,4,1
+"401","282",29,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",2,3,1,2,2,2,1,2,2,3,1,3,1,1,3
+"402","285",34,"male","Abitur","StudentIn",1,1,3,2,1,3,2,4,4,3,3,4,4,2,3
+"403","290",29,"male","Abitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,3,3,4,3,4,4,3,2,2,2,4,2,2
+"404","291",54,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,3,2,4,2,2,2,3,2,2,3,4,1,2
+"405","297",26,"female","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,3,5,4,4,2,3,3,2,2,2,3,2,4,1
+"409","308",26,"male","Abitur","In Ausbildung",5,5,5,4,5,1,1,1,1,1,1,1,2,2,1
+"411","320",25,"female","Abitur","StudentIn",4,3,4,3,3,2,4,4,4,4,4,4,4,4,4
+"412","324",35,"male","Mittlere Reife","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,1,3,1,4,2,2,3,2,2,1,2,2,3,2
+"413","327",22,"female","Abitur","StudentIn",3,4,4,3,1,3,2,3,3,4,4,3,3,3,3
+"414","334",36,"male","Abgeschlossene Lehre","Angestellte/r, sonstiges",2,4,1,1,4,4,3,3,4,3,2,4,4,1,2
+"415","343",29,"male","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,4,4,1,2,3,1,1,1,1,2,2,1
+"416","344",36,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,3,4,3,1,3,3,3,3,1,1,4,4,1
+"417","345",23,"male","Abitur","Angestellte/r Rettungsdienst",4,4,4,3,3,4,2,2,3,2,1,1,4,4,1
+"418","346",22,"female","Abitur","Angestellte/r Rettungsdienst",1,1,2,2,3,1,1,1,1,2,1,1,1,1,1
+"419","347",36,"male","Abitur","Angestellte/r Rettungsdienst",3,2,2,1,3,2,2,2,2,2,2,2,2,2,2
+"420","352",24,"male","Abgeschlossene Lehre","In Ausbildung",1,2,0,1,1,3,2,3,4,4,4,4,4,4,2
+"421","355",40,"male","Abitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,3,3,3,2,1,4,2,2,2,2,2,3,2
+"424","359",47,"male","Hauptschulabschluss","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,3,4,1,2,3,2,1,2,3,4,3,1
+"425","363",28,"male","Fachabitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,3,3,4,4,3,2,2,2,2,2,2,4,2,2
+"426","374",39,"male","Hauptschulabschluss","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,3,NA,0,2,2,2,2,1,1,1,1,2,3,1
+"427","376",43,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,4,3,4,4,4,4,1,1,1,1,4,4,1
+"428","379",24,"male","Abitur","StudentIn",3,1,2,1,4,3,2,2,2,2,2,2,2,3,3
+"430","384",25,"male","Abitur","Angestellte/r, sonstiges",2,3,2,1,1,3,3,3,3,3,3,2,2,2,2
+"431","389",31,"male","Fachabitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,4,4,2,3,2,2,2,2,2,3,3,2
+"432","390",30,"male","Hauptschulabschluss","Beamte/r im Bereich Feuerwehr/Rettungsdienst",3,1,1,3,3,1,1,4,1,1,1,1,1,4,4
+"433","393",31,"male","Hauptschulabschluss","Angestellte/r Rettungsdienst",4,2,2,1,1,2,2,2,2,2,2,2,2,2,2
+"434","396",25,"female","Abitur","Angestellte/r Rettungsdienst",3,2,1,1,1,2,3,4,3,3,3,3,4,4,3
+"435","401",23,"female","Abitur","Angestellte/r Rettungsdienst",2,2,1,1,3,2,1,3,2,3,2,2,2,3,2
+"436","402",33,"male","Fachabitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",5,4,4,2,4,2,1,3,3,2,2,2,1,3,2
+"437","410",21,"female","Abitur","StudentIn",4,2,3,3,4,3,1,2,1,2,2,2,3,1,1
+"439","418",31,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",4,4,4,3,3,2,1,2,1,2,1,1,1,4,2
+"440","421",48,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",3,4,3,3,3,2,2,3,4,2,3,3,2,3,2
+"441","422",21,"male","Abitur","Angestellte/r Rettungsdienst",1,2,1,1,1,2,2,4,2,2,2,3,1,1,2
+"442","423",34,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,4,2,4,2,2,1,1,1,1,1,4,2,1
+"443","424",68,"male","Mittlere Reife","Angestellte/r Rettungsdienst",NA,NA,NA,NA,NA,2,2,2,2,2,2,2,3,3,2
+"444","432",26,"male","Abitur","Angestellte/r Rettungsdienst",4,3,1,3,4,2,1,3,3,2,2,3,4,4,2
+"445","434",22,"male","Abitur","Angestellte/r Rettungsdienst",4,3,3,1,4,1,3,4,2,3,2,1,3,1,1
+"446","435",35,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,4,4,5,2,2,3,2,1,1,1,3,2,1
+"447","436",28,"female","Hauptschulabschluss","Angestellte/r Rettungsdienst",3,3,3,1,2,1,2,1,2,1,1,1,4,4,1
+"448","439",41,"male","Mittlere Reife","Angestellte/r Rettungsdienst",2,1,1,0,1,2,2,3,2,3,2,2,1,1,2
+"449","441",36,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,4,4,4,3,1,2,1,1,1,1,1,2,2,1
+"450","443",31,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",3,4,2,0,2,2,1,2,2,2,2,1,3,3,1
+"452","451",34,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,4,4,2,2,3,2,2,2,2,2,2,2
+"453","452",45,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",3,2,2,2,1,1,3,3,3,1,1,1,3,3,1
+"454","454",21,"female","Mittlere Reife","Angestellte/r Rettungsdienst",3,4,3,1,2,2,2,2,2,4,3,2,2,2,2
+"456","457",35,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",5,4,4,3,4,2,2,2,3,2,3,3,3,2,3
+"457","459",20,"female","Abitur","Angestellte/r Rettungsdienst",2,1,0,0,3,3,2,3,3,3,3,4,3,3,2
+"458","463",19,"female","Abitur","Angestellte/r Rettungsdienst",4,4,4,3,4,2,3,3,2,2,2,2,3,3,2
+"459","464",20,"female","Fachabitur","Angestellte/r Rettungsdienst",3,2,4,2,3,3,2,2,2,2,2,2,2,3,3
+"460","466",23,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,1,3,2,1,3,2,2,1,1,1,3,1
+"461","468",23,"male","Fachabitur","In Ausbildung",4,4,4,3,4,1,2,2,3,3,3,3,2,2,2
+"462","474",23,"male","Abitur","Angestellte/r Rettungsdienst",4,3,2,1,3,2,2,2,2,1,1,1,2,1,1
+"463","475",39,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,1,3,3,1,1,1,1,4,1,1,4,4,1
+"464","476",36,"male","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,4,4,1,2,1,2,1,1,1,2,1,1
+"466","478",30,"male","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,2,0,4,2,2,2,2,2,1,1,3,3,2
+"467","481",48,"male","Mittlere Reife","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,3,3,4,3,3,2,2,2,2,3,4,4
+"468","482",28,"male","Fachabitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",1,0,1,0,1,3,3,4,4,4,3,4,4,3,4
+"471","515",26,"male","Mittlere Reife","Beamte/r im Bereich Feuerwehr/Rettungsdienst",3,1,2,2,1,2,1,2,4,1,3,4,4,3,3
+"472","520",46,"male","Abitur","Angestellte/r Rettungsdienst",4,3,4,0,3,3,3,4,3,4,2,2,3,4,3
+"473","521",21,"male","Abitur","StudentIn",4,3,3,2,4,3,2,3,3,3,3,3,2,3,3
+"475","531",24,"male","Abitur","StudentIn",2,2,1,0,2,3,4,4,4,2,2,3,2,4,2
+"476","533",32,"male","Fachabitur","Angestellte/r Rettungsdienst",4,4,3,4,4,2,3,3,2,1,1,1,3,2,1
+"477","535",27,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,2,2,1,4,2,2,3,4,4,1,3,4,4,3
+"478","541",23,"male","Abitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,2,4,3,4,1,2,4,2,2,1,2,3,4,2
+"479","557",25,"male","Abitur","In Ausbildung",3,1,3,1,5,3,2,4,3,3,2,3,4,4,3
+"480","560",32,"female","Abitur","Angestellte/r Rettungsdienst",4,2,3,1,2,2,2,2,2,3,2,2,3,2,2
+"481","562",44,"male","Mittlere Reife",NA,3,4,3,4,2,4,3,4,4,3,2,3,4,4,2
+"482","564",39,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,4,4,5,1,2,2,1,1,1,1,1,3,1
+"483","565",38,"male","Mittlere Reife","Angestellte/r Rettungsdienst",2,2,1,1,2,2,3,3,3,3,3,3,3,3,3
+"484","566",41,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",0,0,0,0,0,1,1,3,1,2,3,3,1,1,3
+"485","567",32,"male","Abitur","Angestellte/r Rettungsdienst",3,4,2,2,2,3,2,3,2,2,2,2,3,2,2
+"486","568",25,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,1,3,1,3,2,2,3,2,3,2,2,3,3,2
+"487","569",30,"male","Abitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,2,4,3,1,2,4,1,2,1,1,2,3,1
+"489","573",45,"male","Abitur","Angestellte/r, sonstiges",4,4,3,3,4,2,3,3,2,2,2,2,3,2,2
+"490","584",19,"male","Abitur","StudentIn",4,4,4,3,4,1,1,1,1,1,1,1,3,1,1
+"491","586",30,"male","Abitur","Angestellte/r Rettungsdienst",2,1,1,1,1,1,2,3,1,1,3,1,3,3,1
+"492","587",27,"female","Abitur","Angestellte/r Rettungsdienst",3,3,3,2,2,4,4,4,1,2,2,2,4,4,2
+"493","588",38,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,4,3,2,1,2,3,2,2,2,2,1,2,3,2
+"497","599",24,"male","Abitur","Angestellte/r Rettungsdienst",1,3,2,3,4,2,2,2,2,2,2,2,2,2,2
+"498","603",25,"male","Abitur","Angestellte/r Rettungsdienst",4,4,4,4,4,2,2,2,1,2,2,2,3,3,1
+"499","606",42,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",4,5,4,4,5,2,2,2,2,2,2,2,2,2,2
+"500","614",28,"male","Abgeschlossene Lehre","StudentIn",1,1,1,1,1,1,1,1,1,2,2,1,1,1,1
+"501","615",35,"female","Abitur","Angestellte/r Rettungsdienst",4,3,3,2,NA,2,2,2,2,2,2,2,3,3,2
+"502","619",26,"male","Mittlere Reife","In Ausbildung",4,4,4,2,4,2,3,3,3,1,1,2,3,2,1
+"503","620",34,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",3,2,3,1,4,2,1,1,3,2,4,1,1,2,1
+"504","621",27,"male","Abitur","StudentIn",1,0,1,0,1,4,4,4,4,4,4,4,4,4,4
+"506","624",29,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,3,3,2,3,2,2,3,3,2,2,3,3,3,3
+"507","626",23,"female","Abitur","Angestellte/r Rettungsdienst",4,3,3,3,3,4,4,4,4,4,4,4,4,4,4
+"509","630",36,"male","Fachhochschul-/Hochschulabschluss","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,2,4,1,2,2,3,4,4,4,4,4,2
+"511","632",53,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,4,4,5,4,2,1,1,1,1,1,2,1,3,1
+"512","634",33,"male","Fachabitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",3,1,2,2,3,2,2,3,1,1,2,3,2,2,1
+"513","637",27,"male","Abitur","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,3,4,3,5,4,1,4,3,2,2,2,3,4,3
+"514","638",30,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",2,1,2,1,1,3,1,3,2,2,2,2,2,2,2
+"515","643",24,"female","Abitur","Angestellte/r Rettungsdienst",4,4,2,1,1,3,2,2,2,1,1,2,2,2,1
+"516","644",60,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,4,4,4,3,1,2,1,1,1,1,1,4,1,1
+"517","647",41,"male","Hauptschulabschluss","Angestellte/r, sonstiges",3,3,2,3,3,1,1,2,2,2,2,2,2,2,2
+"520","658",23,"male","Abitur","StudentIn",4,4,3,4,3,4,4,4,4,3,2,4,4,4,2
+"522","666",61,"male","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,5,5,3,2,1,2,2,2,2,4,2,2
+"523","667",26,"female","Abitur","StudentIn",4,4,3,4,4,1,1,2,2,2,1,1,2,1,1
+"524","669",28,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,3,4,3,1,2,4,2,2,2,1,3,3
+"525","670",28,"female","Fachhochschul-/Hochschulabschluss","StudentIn",3,4,3,1,3,3,2,2,2,2,2,2,2,2,2
+"527","683",28,"female","Mittlere Reife","Angestellte/r Rettungsdienst",1,1,1,0,1,3,3,3,4,4,3,4,3,3,3
+"528","685",28,"female","Abitur","Angestellte/r Rettungsdienst",5,4,5,5,5,1,1,1,2,1,1,1,1,1,1
+"529","695",29,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,3,4,4,3,1,4,3,1,1,1,1,2,3,3
+"530","699",24,"female","Abitur","Angestellte/r Rettungsdienst",1,1,2,1,1,2,3,4,4,4,4,4,4,4,4
+"531","700",29,"male","Abitur","Angestellte/r Rettungsdienst",2,4,1,1,1,4,3,3,4,2,4,3,1,1,3
+"532","701",46,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,4,5,1,1,2,4,1,1,1,4,2,1
+"533","703",24,"male","Abitur","Angestellte/r Rettungsdienst",2,1,2,1,3,2,1,3,2,3,3,3,3,2,2
+"535","711",23,"male","Abitur","Angestellte/r Rettungsdienst",4,3,4,2,4,1,2,3,2,1,2,1,3,2,1
+"536","724",25,"female","Abitur","Angestellte/r Rettungsdienst",2,3,3,2,4,2,1,2,2,3,4,2,1,1,1
+"537","725",26,"female","Fachhochschul-/Hochschulabschluss","StudentIn",3,4,4,2,3,1,2,1,1,1,1,1,1,2,1
+"538","726",38,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",3,3,2,4,4,3,4,4,4,3,3,3,4,2,3
+"540","728",28,"female","Abitur","Angestellte/r Rettungsdienst",2,1,2,1,3,2,2,2,3,1,2,2,2,1,2
+"541","744",33,"male","Fachabitur","Angestellte/r Rettungsdienst",1,1,2,1,4,3,3,4,3,4,4,4,3,1,2
+"543","754",22,"male","Abitur","Angestellte/r Rettungsdienst",4,4,4,3,4,2,2,2,2,2,3,1,3,4,2
+"544","755",43,"male","Abitur","Angestellte/r Rettungsdienst",3,3,3,2,2,4,2,4,3,3,2,2,2,2,2
+"545","759",34,"male","Fachhochschul-/Hochschulabschluss","In Ausbildung",4,3,3,3,4,2,3,4,1,2,2,2,4,4,1
+"547","767",28,"female","Abitur","Angestellte/r Rettungsdienst",4,3,2,1,2,3,3,3,3,2,2,2,4,2,2
+"548","774",29,"male","Abitur","In Ausbildung",1,3,1,3,1,2,3,3,4,3,2,3,4,1,2
+"549","777",32,"male","Abitur","Angestellte/r Rettungsdienst",4,3,4,3,4,2,2,2,2,2,2,1,2,3,1
+"551","791",47,"male","Mittlere Reife","Angestellte/r Rettungsdienst",2,1,1,1,1,3,2,3,3,3,3,3,2,3,3
+"553","799",23,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,2,3,3,2,2,3,3,2,2,2,2,1
+"554","801",55,"male","Fachhochschul-/Hochschulabschluss","Beamte/r im Bereich Feuerwehr/Rettungsdienst",1,4,0,0,4,2,4,4,2,1,1,1,4,3,1
+"556","805",23,"male","Abitur","Angestellte/r Rettungsdienst",3,4,3,3,4,2,1,2,2,2,2,2,3,4,3
+"557","807",22,"female","Abitur","In Ausbildung",4,4,4,1,3,1,4,3,2,1,2,1,3,3,1
+"558","812",24,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,2,1,1,2,1,2,2,1,1,1,2,2,2,1
+"559","813",42,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,5,2,1,3,1,1,1,1,1,1,1,3,3,1
+"563","828",26,"male","Abitur","In Ausbildung",4,4,3,4,3,1,1,3,3,2,1,2,1,3,1
+"565","837",33,"male","Fachabitur","Angestellte/r Rettungsdienst",4,2,3,2,4,2,3,3,1,1,1,1,3,4,2
+"567","842",41,"female","Fachabitur","Angestellte/r Rettungsdienst",2,2,2,1,1,2,3,2,2,2,2,2,3,2,1
+"568","844",22,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,5,3,4,5,2,2,2,2,1,1,1,2,2,2
+"569","845",31,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",2,2,2,1,1,2,3,2,1,3,3,1,1,3,1
+"570","846",44,"female","Abitur","Selbstständig",4,4,3,2,4,1,2,1,1,1,1,1,1,1,1
+"571","847",23,"female",NA,NA,NA,NA,NA,NA,NA,2,2,2,2,2,2,2,1,1,1
+"572","864",21,"female","Abitur","In Ausbildung",2,2,1,0,3,3,2,3,3,3,3,4,3,1,3
+"573","865",29,"male","Abitur","Angestellte/r Rettungsdienst",4,3,4,1,4,2,3,4,4,2,2,2,3,3,2
+"575","868",28,"male","Abitur","Angestellte/r Rettungsdienst",4,2,4,1,1,2,2,2,2,2,2,2,2,2,2
+"576","870",31,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",3,4,3,2,1,2,1,2,3,2,2,2,1,2,1
+"577","875",24,"male","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,3,3,4,3,2,3,4,3,3,4,4,4,3
+"578","879",22,"female","Abitur","In Ausbildung",4,2,4,2,4,2,1,2,1,2,2,2,1,3,2
+"579","880",38,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",4,3,2,2,1,4,2,2,4,3,3,3,3,2,3
+"580","882",47,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,2,1,1,1,2,1,1,1,2,2,2,2,2,1
+"581","884",29,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,2,2,1,1,3,2,3,2,2,2,2,2,2,2
+"582","897",31,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,1,2,0,3,2,2,3,2,1,1,2,4,3,1
+"584","906",34,"female","Mittlere Reife","Angestellte/r Rettungsdienst",4,3,3,4,3,1,1,1,1,1,1,2,4,4,4
+"587","917",29,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",4,4,2,2,3,4,4,4,4,3,2,3,4,4,3
+"588","918",26,"male","Abitur","Angestellte/r Rettungsdienst",3,2,3,4,3,2,4,4,2,3,2,2,4,3,2
+"589","921",32,"male","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,4,4,4,4,2,3,3,2,2,1,2,4,4,3
+"590","922",37,"male","Fachhochschul-/Hochschulabschluss","In Ausbildung",3,1,1,4,4,2,3,3,4,2,3,1,1,1,2
+"591","927",29,"male","Hauptschulabschluss","In Ausbildung",4,4,3,2,4,4,3,4,4,3,3,4,4,4,4
+"592","928",54,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",3,5,2,2,2,1,3,2,2,2,2,2,3,4,3
+"594","936",27,"female","Mittlere Reife","Angestellte/r Rettungsdienst",4,1,2,1,1,1,1,2,1,3,3,2,1,1,2
+"595","943",32,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",1,3,2,2,4,1,3,3,2,1,2,2,3,2,2
+"597","947",39,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,4,4,4,1,4,3,2,3,3,3,3,3,3
+"598","954",29,"female","Abitur","In Ausbildung",5,4,4,1,4,2,1,2,2,2,1,2,1,1,1
+"599","955",40,"female","Mittlere Reife","Angestellte/r Rettungsdienst",4,3,1,5,2,2,2,3,1,2,2,1,3,2,1
+"601","958",54,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",3,2,4,0,4,2,1,2,1,4,4,4,4,4,1
+"602","959",28,"female","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,1,2,1,2,2,2,3,2,2,2,2,4,3,1
+"603","961",36,"male","Abitur","StudentIn",4,4,3,NA,5,1,2,3,2,2,1,1,4,1,1
+"604","963",24,"female","Abitur","In Ausbildung",4,3,3,1,2,2,2,2,1,2,2,3,3,3,2
+"605","966",25,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,1,1,1,1,1,1,1,2,2,2,1,2
+"607","969",23,NA,"Fachabitur","In Ausbildung",4,3,3,4,3,3,2,3,4,2,2,4,3,3,2
+"608","976",41,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",4,3,4,4,4,1,1,2,2,1,1,1,2,3,1
+"609","978",22,"female","Hauptschulabschluss","Angestellte/r Rettungsdienst",4,4,4,3,4,2,3,3,2,2,2,2,3,3,2
+"610","983",29,"male","Abgeschlossene Lehre","Beamte/r im Bereich Feuerwehr/Rettungsdienst",2,1,1,1,1,3,2,3,3,2,2,2,4,4,2
+"611","985",25,"female","Abitur","In Ausbildung",3,3,3,2,1,2,2,1,2,3,2,1,3,2,1
+"612","987",42,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,2,3,2,2,2,2,2,2,1,4,4,3
+"614","992",23,"female","Abitur","In Ausbildung",4,3,1,3,4,1,1,1,4,4,4,4,4,4,3
+"615","1004",35,"female","Abitur","Angestellte/r Rettungsdienst",4,4,4,4,3,1,4,4,2,2,1,2,4,3,1
+"616","1005",22,"male","Mittlere Reife","Angestellte/r, sonstiges",5,5,5,4,4,2,4,3,2,2,3,3,2,3,1
+"617","1011",36,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,3,2,5,2,1,2,1,1,2,2,3,4,3
+"618","1012",43,"male","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,NA,5,1,1,1,1,1,1,1,1,1,1
+"619","1015",31,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,3,3,3,2,2,2,2,2,2,2,3,2,2
+"620","1016",24,"female","Fachabitur","StudentIn",4,3,4,3,2,1,3,2,1,3,2,3,4,2,1
+"621","1021",51,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,2,2,1,2,3,1,2,2,2,2,2,2,2,1
+"623","1025",27,"female","Abitur","Angestellte/r Rettungsdienst",1,0,0,0,1,3,1,3,3,3,3,2,2,2,2
+"624","1028",37,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,3,2,3,1,1,1,1,1,1,1,3,2,2
+"625","1042",53,"female","Mittlere Reife",NA,3,3,2,1,5,2,2,2,4,3,3,3,4,4,3
+"626","1050",27,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,4,2,4,2,2,3,2,3,2,2,2,3,2
+"627","1053",32,"male","Abitur","In Ausbildung",3,1,2,1,2,3,2,2,1,3,3,3,1,1,1
+"628","1057",45,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,3,1,1,3,4,4,3,2,3,3,4,4,2
+"629","1060",25,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,4,4,4,2,3,2,2,3,2,2,2,2,2
+"630","1061",29,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",2,4,1,4,2,1,2,1,2,1,1,1,2,2,1
+"631","1063",31,"female","Fachabitur","Angestellte/r Rettungsdienst",1,1,1,0,1,2,2,2,2,3,3,3,1,1,2
+"632","1064",30,"male","Abitur","Angestellte/r Rettungsdienst",3,3,2,1,1,1,1,1,1,1,1,1,1,1,1
+"633","1072",47,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,3,3,1,4,3,3,4,4,4,4,4,4,3,3
+"634","1075",32,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",1,2,1,1,3,1,1,1,1,1,1,1,1,1,1
+"635","1093",34,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,5,5,5,5,3,2,2,3,3,3,3,2,2,3
+"636","1096",39,"female","Abitur","Angestellte/r Rettungsdienst",4,4,4,4,4,2,2,3,2,2,2,2,4,4,2
+"637","1097",32,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,2,3,3,3,1,3,2,1,1,2,1,2,2,2
+"638","1099",27,"female","Fachabitur","Angestellte/r Rettungsdienst",4,3,4,2,5,1,1,1,1,1,1,2,1,3,1
+"639","1102",32,"female","Fachabitur","Angestellte/r Rettungsdienst",4,4,3,2,1,2,3,4,4,2,2,1,4,4,1
+"640","1111",30,"male","Abitur","Angestellte/r Rettungsdienst",4,3,2,0,3,2,2,2,2,3,1,1,2,1,1
+"641","1112",23,"female","Abitur","In Ausbildung",2,1,1,0,4,3,3,2,1,1,1,1,3,4,3
+"642","1116",37,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,4,4,3,1,1,1,1,4,1,2,2,2,1
+"643","1120",52,"male","Mittlere Reife","Angestellte/r, sonstiges",3,3,3,2,5,1,2,1,3,2,2,2,3,3,1
+"644","1121",40,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,3,4,1,3,2,2,2,2,1,3,3,1
+"645","1122",45,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",3,3,3,2,1,2,2,2,2,2,2,2,2,2,1
+"647","1125",34,"male","Fachabitur","Angestellte/r Rettungsdienst",3,1,1,0,1,1,1,1,1,1,1,1,1,1,1
+"648","1130",20,"female","Fachabitur","In Ausbildung",3,3,1,0,2,3,2,2,2,3,2,2,2,2,3
+"649","1131",20,"female","Abitur","Angestellte/r Rettungsdienst",4,4,3,3,3,4,4,4,4,4,3,4,4,4,4
+"650","1137",32,"female","Mittlere Reife","Angestellte/r Rettungsdienst",2,1,2,1,3,2,2,2,3,1,1,2,2,2,2
+"651","1139",25,"female","Abitur","Angestellte/r Rettungsdienst",1,1,0,3,1,2,4,4,4,3,3,3,4,4,3
+"652","1140",31,"male","Fachabitur","Angestellte/r Rettungsdienst",4,4,3,1,4,4,2,2,1,2,4,3,4,4,2
+"653","1141",21,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,3,2,1,2,2,3,1,2,1,4,2,1
+"657","1156",50,"male","Mittlere Reife","Angestellte/r, sonstiges",3,1,2,1,3,3,3,3,3,3,2,2,3,4,2
+"660","1164",52,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,3,3,4,1,2,2,3,2,1,2,3,3,2
+"661","1165",34,"female","Hauptschulabschluss","Angestellte/r, sonstiges",4,5,5,4,5,1,1,1,1,1,1,1,2,1,1
+"662","1169",18,"female","Fachhochschul-/Hochschulabschluss","StudentIn",4,3,4,3,4,1,3,2,2,2,2,2,3,3,2
+"663","1172",42,"male","Abitur","Angestellte/r Rettungsdienst",1,1,0,1,1,4,3,3,3,4,4,4,4,4,4
+"664","1173",30,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,3,4,4,1,2,1,1,1,1,2,3,3,1
+"665","1177",26,"female","Abitur","StudentIn",2,2,2,2,2,3,2,4,3,3,2,2,4,1,2
+"667","1187",35,"male","Abitur","Angestellte/r Rettungsdienst",1,1,0,0,2,2,3,3,2,2,2,2,4,3,2
+"668","1190",24,"male","Abitur","Angestellte/r Rettungsdienst",4,3,3,4,4,3,1,1,2,2,1,2,2,2,2
+"669","1194",45,"female","Abgeschlossene Lehre","Angestellte/r, sonstiges",2,2,3,2,4,1,3,3,1,1,1,1,3,3,1
+"670","1202",25,"female","Fachabitur","Angestellte/r Rettungsdienst",4,3,4,2,4,3,1,1,1,1,1,1,1,1,1
+"672","1205",22,"female","Abitur","In Ausbildung",3,2,4,4,3,1,1,3,1,1,1,1,2,2,1
+"674","1208",32,"male","Abitur","Angestellte/r Rettungsdienst",3,2,2,1,2,3,2,2,3,3,3,2,3,1,2
+"675","1214",53,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",2,2,2,1,1,3,3,4,2,2,2,2,2,3,3
+"676","1219",28,"female","Abitur","Angestellte/r Rettungsdienst",0,0,1,2,3,1,1,1,1,1,1,1,1,1,1
+"677","1221",36,"female","Mittlere Reife","Angestellte/r Rettungsdienst",2,1,1,1,4,3,2,2,2,2,2,3,3,3,2
+"679","1231",23,"female","Abitur","StudentIn",3,3,2,2,1,2,2,2,2,2,2,2,2,2,2
+"680","1235",20,NA,"Abitur","In Ausbildung",4,4,5,3,3,2,1,3,1,4,1,1,1,1,1
+"681","1239",27,"male","Mittlere Reife","Angestellte/r Rettungsdienst",4,3,3,2,3,2,3,2,2,2,2,2,4,2,2
+"682","1240",42,"male","Mittlere Reife","In Ausbildung",5,4,5,3,4,2,2,1,1,1,1,1,1,1,1
+"683","1243",32,"female","Abitur","Angestellte/r Rettungsdienst",2,3,1,3,1,3,3,3,3,3,2,3,3,3,2
+"685","1245",26,"female","Abitur","Angestellte/r Rettungsdienst",4,3,2,2,5,1,1,2,2,1,1,1,2,2,1
+"686","1246",24,"male","Abitur","Angestellte/r Rettungsdienst",3,1,2,1,2,2,1,2,1,1,2,1,1,3,1
+"687","1248",34,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,1,1,0,3,2,1,3,2,2,1,1,4,2,1
+"688","1253",25,"female","Fachabitur","Angestellte/r Rettungsdienst",4,3,3,1,3,3,2,4,4,4,4,4,4,4,4
+"690","1262",34,"female","Mittlere Reife","Angestellte/r Rettungsdienst",3,2,NA,NA,NA,4,4,4,2,2,2,3,4,4,2
+"691","1263",52,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",1,1,1,0,2,2,2,2,2,2,2,2,2,2,2
+"692","1267",26,"female","Abitur","StudentIn",3,4,2,1,3,2,3,2,2,1,1,1,2,2,1
+"693","1270",38,"female","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",1,1,1,0,2,2,3,4,2,2,2,1,3,3,1
+"694","1286",39,"female","Abgeschlossene Lehre","StudentIn",0,0,0,0,0,2,2,4,1,2,2,2,3,2,3
+"696","1293",23,"female","Mittlere Reife","In Ausbildung",4,4,3,2,3,3,2,2,3,3,3,3,2,2,2
+"697","1295",NA,"female","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,4,4,3,1,4,4,1,1,1,1,4,4,1
+"698","1296",34,"female","Abitur","Angestellte/r Rettungsdienst",4,3,2,2,1,2,1,2,2,2,2,1,3,2,1
+"699","1298",26,"female","Abitur","Angestellte/r Rettungsdienst",3,0,1,0,4,1,1,4,2,1,1,1,2,1,1
+"700","1303",44,"female","Fachabitur","Angestellte/r Rettungsdienst",3,2,2,1,1,1,1,2,2,3,3,3,2,2,2
+"701","1304",40,"male","Fachhochschul-/Hochschulabschluss","Sonstiges",1,0,4,1,5,2,3,3,4,4,3,3,4,2,2
+"702","1306",23,"female","Fachabitur","Angestellte/r Rettungsdienst",1,1,0,0,1,2,1,3,2,2,4,1,1,1,2
+"703","1309",44,"male","Fachabitur","Angestellte/r Rettungsdienst",2,1,0,0,2,3,2,2,3,3,3,2,2,4,2
+"705","1320",27,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,4,4,1,2,2,1,1,2,2,3,2,1
+"706","1321",30,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,4,4,2,2,2,2,2,1,2,2,2,2,2,1
+"707","1322",60,"male","Mittlere Reife","Angestellte/r Rettungsdienst",3,5,3,2,4,1,2,3,1,1,1,1,4,4,1
+"709","1327",32,"male","Mittlere Reife","Angestellte/r Rettungsdienst",1,4,0,1,1,4,4,4,4,4,4,4,4,2,4
+"712","1332",27,"female","Abitur","StudentIn",4,3,3,3,4,2,3,3,2,2,2,2,3,2,2
+"714","1341",43,"female","Mittlere Reife","Angestellte/r, sonstiges",4,3,2,2,4,2,3,3,2,2,1,2,2,2,2
+"717","1351",23,"male","Fachabitur","Angestellte/r Rettungsdienst",4,5,5,4,4,1,1,2,1,1,1,1,3,3,2
+"718","1353",27,"male","Abgeschlossene Lehre","In Ausbildung",3,1,3,1,3,2,2,3,2,2,2,3,4,3,3
+"719","1354",56,"male",NA,"Beamte/r im Bereich Feuerwehr/Rettungsdienst",4,NA,1,1,4,1,1,1,1,4,3,1,1,4,3
+"720","1355",37,"male","Abitur","Angestellte/r Rettungsdienst",4,3,3,2,4,1,3,3,3,2,2,2,4,2,2
+"722","1357",45,"male","Abitur","Angestellte/r Rettungsdienst",4,4,3,4,4,3,2,3,2,3,2,2,2,3,2
+"723","1358",48,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",1,0,2,1,2,4,4,3,2,2,2,2,2,2,3
+"724","1360",30,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r, sonstiges",3,2,1,1,4,1,2,1,1,2,1,1,1,1,1
+"725","1361",28,"female","Abitur","In Ausbildung",2,2,2,1,5,3,3,3,1,2,2,3,3,2,1
+"726","1365",21,"male","Abgeschlossene Lehre","Angestellte/r Rettungsdienst",4,3,2,1,4,3,1,2,3,2,2,2,2,4,2
+"727","1370",34,"male","Mittlere Reife","Beamte/r im Bereich Feuerwehr/Rettungsdienst",3,1,2,0,2,3,2,2,2,3,3,2,3,2,2
+"728","1373",34,"male","Fachhochschul-/Hochschulabschluss","Angestellte/r Rettungsdienst",4,4,3,3,3,2,2,2,2,2,2,2,1,1,2
+"729","1382",35,"male","Mittlere Reife","Angestellte/r Rettungsdienst",1,1,4,1,1,1,1,1,1,2,2,2,1,2,1
+"730","1392",27,"female","Mittlere Reife","Angestellte/r Rettungsdienst",4,4,4,3,3,1,2,2,2,1,1,1,2,3,1
+"731","1403",33,"female","Fachhochschul-/Hochschulabschluss","StudentIn",2,2,2,1,3,1,1,2,2,2,2,1,2,2,1
+"732","100_final",19,"female","Abitur",NA,3,3,4,4,4,2,2,3,2,2,2,3,3,2,2
+"733","104_final",19,"female","Abitur",NA,2,2,1,1,2,2,3,3,2,2,2,2,2,2,1
+"734","105_final",20,"male","Abitur",NA,4,5,1,2,1,1,2,4,3,2,1,3,3,4,3
+"735","106_final",25,"female","Abitur",NA,1,2,3,4,1,2,2,3,2,3,2,3,3,3,1
+"736","108_final",23,"female","Abitur",NA,4,4,4,4,4,1,3,2,1,2,2,1,3,1,1
+"737","10_final",20,"female","Abitur",NA,4,2,4,2,5,2,4,3,2,2,2,2,2,2,2
+"738","110_final",21,"female","Abitur",NA,3,2,4,4,5,3,3,2,1,1,1,1,3,1,1
+"739","111_final",20,"female","Abitur",NA,1,4,4,3,4,2,3,3,3,2,2,2,2,2,1
+"740","113_final",24,"female","Abitur",NA,2,2,3,4,1,3,2,2,2,2,2,2,2,2,2
+"741","115_final",23,"female","Abitur",NA,4,4,4,4,5,1,1,2,2,2,1,2,1,1,2
+"742","117_final",21,"female","Abitur",NA,4,4,3,3,1,3,3,4,3,2,2,2,4,3,1
+"743","118_final",27,"female","Abitur",NA,2,3,2,2,2,2,2,3,1,2,2,3,3,2,1
+"744","119_final",19,"female","Abitur",NA,3,3,4,4,3,2,3,3,4,1,2,3,3,2,2
+"745","11_final",20,"female","Abitur",NA,2,2,2,2,1,3,3,3,3,3,3,3,4,3,2
+"746","120_final",22,"female","Abitur",NA,3,3,2,1,2,2,2,3,3,2,2,2,2,2,2
+"747","121_final",24,"male","Abitur",NA,3,3,4,4,4,1,2,2,2,1,2,2,2,2,2
+"748","122_final",18,"female","Abitur",NA,4,3,4,3,4,2,2,1,1,1,1,2,2,2,1
+"749","123_final",27,"male","Abitur",NA,3,2,1,2,4,2,3,2,1,1,1,1,3,2,1
+"750","124_final",19,"female","Abitur",NA,2,2,2,1,3,4,2,2,2,3,3,4,2,3,3
+"751","127_final",30,"female","Abitur",NA,1,3,1,1,1,4,4,4,4,4,4,4,4,3,4
+"752","128_final",29,"male","Abitur",NA,4,4,4,1,4,3,4,4,3,3,4,3,2,3,2
+"753","129_final",20,"female","Abitur",NA,4,2,4,1,4,2,3,4,3,4,4,4,1,1,3
+"754","12_final",26,"female","Abitur",NA,4,4,4,4,4,1,2,2,1,1,1,2,3,1,1
+"755","130_final",25,"male","Abitur",NA,3,4,3,3,5,1,1,1,1,1,1,2,1,1,1
+"756","131_final",20,"female","Abitur",NA,4,3,4,2,4,3,4,4,4,3,4,4,3,3,4
+"757","132_final",18,"female","Abitur",NA,4,3,3,2,3,2,3,2,3,3,2,3,2,2,2
+"758","138_final",20,"female","Abitur",NA,4,3,4,3,4,2,2,3,3,2,2,2,2,2,2
+"759","140_final",21,"female","Abitur",NA,3,4,2,3,5,2,2,3,3,2,2,2,3,1,2
+"760","141_final",22,"female","Abitur",NA,3,2,3,1,3,3,4,4,3,3,3,2,4,2,3
+"761","142_final",28,"male","Abitur",NA,2,3,1,1,2,2,1,2,3,3,3,3,2,2,2
+"762","143_final",20,"female","Abitur",NA,4,3,5,4,5,3,2,2,4,3,2,4,1,1,2
+"763","144_final",20,"female","Abitur",NA,3,3,1,2,4,2,2,2,2,3,2,2,4,2,2
+"764","147_final",26,"male","Abitur",NA,4,4,4,4,4,2,2,2,2,2,2,2,3,4,2
+"765","148_final",21,"female","Mittlere Reife",NA,4,4,4,3,5,2,3,2,2,2,2,3,2,2,2
+"766","149_final",26,"female","Abitur",NA,3,3,3,1,4,2,2,2,2,2,3,2,1,1,1
+"767","14_final",20,"female","Abitur",NA,1,1,1,2,0,1,2,1,2,1,1,2,1,1,1
+"768","150_final",28,"female","Mittlere Reife",NA,4,3,3,3,3,4,3,3,2,1,2,3,3,1,1
+"769","151_final",21,"female","Abitur",NA,4,1,1,1,1,2,2,3,3,2,1,2,4,2,2
+"770","152_final",22,"female","Abitur",NA,1,2,1,0,1,3,2,4,3,4,3,4,3,3,4
+"771","153_final",19,"female","Abitur",NA,4,3,4,3,4,1,3,1,1,1,1,2,2,1,1
+"772","154_final",19,"female","Abitur",NA,1,2,0,2,0,3,1,2,2,3,3,4,1,1,2
+"773","155_final",19,"female","Abitur",NA,3,2,3,1,3,2,4,4,2,2,2,2,2,2,3
+"774","156_final",26,"female","Abitur",NA,0,0,1,4,4,3,2,2,2,3,3,3,2,2,3
+"775","159_final",19,"male","Abitur",NA,2,5,1,1,2,4,1,4,4,4,3,4,4,4,4
+"776","160_final",20,"female","Abitur",NA,3,2,2,3,3,2,2,3,2,2,2,2,2,3,2
+"777","163_final",24,"female","Abitur",NA,3,3,2,1,3,1,1,1,2,2,3,2,1,1,2
+"778","165_final",21,"female","Abitur",NA,3,4,2,3,4,2,3,3,2,1,1,2,4,2,1
+"779","166_final",23,"female","Abitur",NA,3,4,3,0,3,2,2,3,2,2,3,1,4,4,2
+"780","167_final",27,"female","Abitur",NA,2,1,2,0,4,2,2,2,2,2,2,2,2,2,2
+"781","168_final",23,"female","Abitur",NA,4,4,4,3,4,2,3,3,2,2,2,2,3,2,2
+"782","16_final",28,"male","Abitur",NA,3,2,2,0,1,4,4,4,3,4,4,4,4,4,4
+"783","170_final",19,"female","Abitur",NA,3,1,2,1,4,3,3,4,3,3,3,3,4,3,3
+"784","171_final",23,"female","Abitur",NA,3,1,4,1,4,2,3,3,2,2,2,2,2,1,1
+"785","172_final",25,"female","Abitur",NA,3,2,1,1,3,3,4,4,4,3,2,3,2,2,3
+"786","173_final",24,"female","Abitur",NA,2,2,4,2,4,3,4,4,3,3,2,3,2,3,4
+"787","175_final",20,"male","Abitur",NA,4,3,4,4,3,2,2,2,3,2,2,4,2,2,1
+"788","177_final",24,"female","Abitur",NA,3,4,2,2,3,3,2,3,3,3,2,4,2,2,2
+"789","183_final",23,"female","Abitur",NA,3,2,3,3,4,2,2,1,2,2,1,2,2,1,1
+"790","185_final",18,"female","Abitur",NA,4,4,4,5,3,2,3,2,1,2,1,2,2,3,1
+"791","187_final",19,"male","Abitur",NA,5,5,5,4,5,1,1,1,1,1,1,1,1,1,1
+"792","188_final",20,"female","Abitur",NA,3,1,3,2,3,3,3,3,3,3,3,3,2,2,4
+"793","189_final",28,"female","Abitur",NA,4,4,4,4,4,2,3,2,2,2,2,3,4,4,2
+"794","18_final",28,"female","Abitur",NA,4,4,4,4,3,3,3,4,2,2,2,2,3,2,2
+"795","190_final",25,"female","Abitur",NA,4,3,4,4,4,2,3,2,2,1,1,2,1,1,1
+"796","191_final",23,"female","Abitur",NA,2,2,1,1,1,2,2,3,2,3,2,2,2,2,2
+"797","193_final",26,"female","Abitur",NA,3,3,4,1,3,3,4,4,3,3,2,3,1,2,3
+"798","194_final",23,"female","Abitur",NA,5,5,4,5,4,2,3,4,2,2,1,2,3,4,2
+"799","196_final",27,"female","Abitur",NA,3,1,4,3,5,3,3,3,2,3,2,1,1,1,1
+"800","197_final",22,"female","Abitur",NA,4,2,3,1,4,2,2,3,1,2,2,2,1,2,2
+"801","1_final",23,"female","Abitur",NA,4,4,4,3,3,3,3,3,2,2,2,2,3,2,2
+"802","21_final",20,"female","Abitur",NA,2,3,2,3,4,4,4,3,2,2,2,2,1,1,2
+"803","23_final",25,"female","Abitur",NA,1,1,2,3,4,2,1,3,2,1,3,2,1,2,1
+"804","24_final",20,"female","Abitur",NA,3,3,2,3,3,3,2,2,2,2,2,3,2,2,1
+"805","25_final",21,"female","Abitur",NA,4,4,3,3,4,2,3,3,2,2,2,2,3,3,2
+"806","26_final",23,"female","Abitur",NA,4,4,4,3,5,2,3,3,2,1,2,2,2,2,1
+"807","28_final",26,"male","Abitur",NA,3,3,2,1,2,3,3,3,4,4,4,3,2,2,3
+"808","29_final",26,"female","Abitur",NA,3,2,2,1,3,3,2,2,2,1,2,2,3,3,2
+"810","30_final",20,"female","Abitur",NA,4,2,4,1,4,2,2,1,2,2,2,2,1,1,1
+"811","33_final",20,"female","Abitur",NA,1,1,1,1,1,3,3,3,3,3,3,2,3,3,3
+"812","34_final",24,"female","Abitur",NA,3,3,3,2,3,2,3,3,3,3,3,3,4,3,3
+"813","37_final",22,"male","Abitur",NA,3,4,4,3,4,1,1,2,2,1,1,2,1,1,1
+"814","39_final",22,"female","Abitur",NA,4,4,4,3,3,3,2,3,3,3,3,3,2,3,3
+"815","3_final",21,"male","Abitur",NA,4,4,3,0,4,2,2,3,3,3,2,3,4,3,2
+"816","40_final",21,"female","Hauptschulabschluss",NA,5,5,5,4,5,2,2,3,1,2,2,2,3,4,1
+"817","42_final",20,"female","Abitur",NA,2,3,2,2,1,2,3,3,3,3,2,3,4,1,2
+"818","43_final",28,"male","Abitur",NA,4,3,4,4,4,2,3,2,3,3,3,3,2,2,2
+"819","46_final",21,"male","Abitur",NA,4,4,3,2,4,1,1,2,1,2,1,1,2,1,1
+"820","47_final",20,"female","Abitur",NA,3,4,2,2,1,3,4,4,3,3,3,4,3,2,3
+"821","48_final",23,"female","Abitur",NA,4,4,3,4,5,2,2,3,2,2,2,2,2,1,2
+"822","49_final",20,"female","Abitur",NA,4,3,3,3,4,2,3,2,2,2,2,2,3,2,2
+"823","50_final",21,"female","Abitur",NA,4,3,4,3,5,2,3,2,1,2,2,2,2,2,1
+"824","51_final",22,"female","Abitur",NA,2,3,3,2,4,3,4,2,3,2,2,3,2,1,1
+"825","53_final",21,"female","Abitur",NA,4,3,3,4,4,3,3,4,2,2,2,3,4,4,2
+"826","54_final",22,"female","Abitur",NA,4,3,2,3,3,3,2,3,3,2,3,3,3,3,2
+"827","56_final",19,"female","Abitur",NA,4,3,4,1,5,2,2,2,2,2,2,2,2,1,2
+"828","5_final",24,"female","Abitur",NA,4,4,4,4,3,2,2,2,2,2,2,2,3,3,1
+"829","60_final",19,"female","Abitur",NA,4,3,2,3,3,2,3,2,2,2,2,2,2,2,2
+"830","61_final",26,"female","Abitur",NA,4,3,4,1,2,3,3,4,4,4,3,4,3,3,3
+"831","63_final",23,"female","Abitur",NA,4,4,4,2,4,1,2,2,2,2,2,2,3,3,2
+"832","65_final",20,"female","Abitur",NA,4,4,3,3,5,2,3,2,1,2,2,2,2,2,1
+"833","66_final",22,"female","Abitur",NA,3,2,3,2,2,4,2,3,2,3,2,2,2,2,2
+"834","67_final",25,"female","Abitur",NA,4,3,1,1,3,3,2,2,2,3,2,4,4,3,2
+"835","68_final",19,"female","Abitur",NA,2,2,3,1,0,2,4,4,4,2,3,4,2,4,3
+"836","70_final",23,"male","Abitur",NA,4,4,4,4,3,2,3,3,2,2,2,2,2,2,1
+"837","71_final",19,"female","Abitur",NA,4,1,3,1,5,2,2,2,2,2,3,2,3,2,1
+"838","74_final",22,"male","Abitur",NA,1,0,1,1,2,2,3,3,2,3,3,2,4,3,3
+"839","75_final",24,"male","Abitur",NA,1,1,2,1,1,2,2,2,2,2,2,3,2,2,2
+"840","76_final",27,"male","Abitur",NA,3,2,2,4,3,3,3,4,4,3,3,4,2,3,3
+"841","78_final",20,"female","Abitur",NA,2,3,1,3,1,2,4,3,1,1,3,1,3,2,1
+"842","79_final",22,"female","Abitur",NA,4,5,5,4,5,2,3,4,3,2,2,1,4,3,1
+"843","80_final",21,"female","Abitur",NA,4,4,3,3,3,2,2,3,2,3,3,3,2,3,2
+"844","81_final",20,"female","Abitur",NA,3,3,4,4,4,2,3,2,2,1,1,2,3,1,1
+"845","83_final",20,"female","Abitur",NA,4,4,4,3,4,2,3,4,2,2,3,2,2,1,2
+"846","84_final",25,"female","Abitur",NA,3,1,4,2,4,3,4,3,2,2,2,2,3,1,2
+"847","86_final",19,"female","Abitur",NA,3,4,1,4,4,2,1,2,2,3,2,2,1,2,2
+"848","87_final",27,"female","Abitur",NA,4,4,3,3,2,3,3,4,3,2,2,3,3,4,3
+"849","89_final",22,"male","Abitur",NA,4,4,4,3,3,3,2,2,2,3,3,3,2,1,2
+"850","8_final",29,"female","Abitur",NA,4,4,4,4,4,2,3,3,2,2,2,2,4,4,1
+"851","90_final",22,"female","Abitur",NA,4,4,4,3,4,2,2,2,2,2,2,2,2,1,2
+"852","92_final",20,"female","Abitur",NA,3,2,3,1,4,2,2,3,3,2,2,3,3,1,2
+"853","93_final",19,"female","Abitur",NA,4,2,4,3,5,2,2,2,1,3,3,2,3,1,2
+"854","94_final",23,"female","Abitur",NA,4,4,4,1,4,2,3,3,2,2,2,2,3,3,2
+"855","96_final",23,"female","Abitur",NA,2,1,1,0,3,4,3,2,3,2,2,2,1,1,1
+"856","98_final",26,"female","Abitur",NA,5,4,4,4,5,2,3,3,3,2,2,2,4,4,3
+"857","9_final",27,"female","Abitur",NA,4,4,2,1,1,3,3,3,2,2,2,2,3,2,2

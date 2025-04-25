@@ -1,0 +1,493 @@
+---
+title: "FlexER 12 item version"
+author: "Timo Schweikert"
+date: "15 3 2021"
+---
+
+## load relevant packages
+```{r}
+
+if (!require("pacman")) install.packages("pacman")
+ pacman::p_load( dplyr, psych, psychometric, QuantPsyc, pequod, Hmisc, Metrics, readxl, readr, car, lavaan, e1071, foreign, semPlot, Lambda4, GPArotation, ggplot2, gridExtra, grid, tibble, tidyr, reshape2, psy, nFactors, MVN, parameters, EGAnet, sjlabelled, here)
+ 
+# find path to Rproj
+here::i_am("FlexERScale.Rproj")
+
+```
+
+## Data import
+```{r}
+# please put the data file "Gesamt.csv" in the same folder as this script!
+
+data_all_12 <- read.table(here::here("datasheets", "12item", "12item_wholeSample.csv"),sep = ";", header=T, encoding = "UTF-8")
+data_all_12$X<- NULL # delete row numbers
+
+```
+
+
+# check response patterns
+```{r}
+# Items 5, 7, and 9 are re-coded items
+
+extremes16 <- function(x) {
+y <- ifelse( x %in% c(1,5), 1, 0 )
+sum( y , na.rm=TRUE )
+}
+
+data_all_12.tmp <- data_all_12
+
+data_all_12 %>%
+  dplyr::select( ef1:ef12 ) %>%
+  mutate( Extreme = apply( ., 1, FUN=extremes16 ) ) %>%
+  dplyr::select( Extreme ) %>%
+  data.frame( data_all_12.tmp, . ) -> data_all_12.tmp
+
+data_all_12.tmp %>%
+arrange( desc(Extreme)) %>%
+dplyr::select( ef1:ef12, Extreme ) %>%
+slice( 1:50 )
+
+data_all_12.tmp %>% dplyr::select( Extreme) %>% table
+
+# in case participants with extreme answers should be excluded:
+
+# data_all_12 %>%
+  # filter( Extreme < 1  ) -> data_all_12 # set cutoff
+```
+Notes: Tendency to extremes. It is accumulated for each respondent how often he or she has extreme values. At least three participants had questionable extreme values (they only responded with 1 or 5). Other participants show also unusual values, but there is no sufficient indication (they simply could live in extremes)
+
+## Tendency towards the centre
+```{r}
+middle34 <- function(x) {
+y <- ifelse( x %in% c(3), 1, 0 )
+sum( y , na.rm=TRUE )
+}
+data_all_12 %>%
+  dplyr::select( ef1:ef12 ) %>%
+  mutate( Middle = apply( ., 1, FUN=middle34 ) ) %>%
+  dplyr::select( Middle ) %>%
+  data.frame( data_all_12.tmp, . ) -> data_all_12.tmp
+data_all_12.tmp %>%
+  arrange( desc(Middle)) %>%
+  dplyr::select( ef1:ef12, Middle ) %>%
+  slice( 1:50 )
+data_all_12.tmp %>% dplyr::select(Middle) %>% table 
+```
+Notes: Tendency towards the centre. There are 18 participants that exclusively chose the mid category. At this point it is not apparent whether participants did not respond carefully or just could not decide. Further 7 participants chose 11 times the middle category and 9 participants 10 times (total: 12 items). 
+
+Consideration may be given to remove the middle answer choice in the future so that participants are forced to choose one direction. Another solution: control-items, like "please choose option 5 here...", to raise attention.
+
+## Maximum Long String (Niessen, Meijer & Tendeiro 2016)
+```{r}
+# could be done before reverse polarity of items, but in this specific case it doesn't matter (longest string: 3)
+maxRun <- function( x ) max( rle( x )$lengths )
+
+data_all_12 %>%
+  dplyr::select( ef1:ef12 ) %>%
+  mutate( MaxRun = apply( ., 1, FUN=maxRun ) ) %>%
+  dplyr::select( MaxRun ) %>%
+  data.frame( data_all_12.tmp, . ) -> data_all_12.tmp
+data_all_12.tmp %>%
+  arrange( desc(MaxRun)) %>%
+  dplyr::select( ef1:ef12, MaxRun ) %>%
+  slice( 1:50 )
+data_all_12.tmp %>% dplyr::select( MaxRun) %>% table
+```
+Notes: Recognize a series of response patterns (which response code was chosen repeatedly). Again, 18 participants with tendency towards the centre are again conspicuous. Two further participants were conspicuous. Therefore, we would not remove these subjects from further analyses.
+
+## Person standard deviation
+```{r}
+# Compute STD over answers of each participant. If one does always chose the same category, the STD will be 0 (complements Maximum Long string)
+
+data_all_12 %>%
+  dplyr::select( ef1:ef12 ) %>%
+  mutate( SD = apply( ., 1, FUN=sd, na.rm=TRUE ) ) %>%
+  dplyr::select( SD ) %>%
+  data.frame( data_all_12.tmp, . ) -> data_all_12.tmp
+data_all_12.tmp %>%
+  arrange( SD ) %>%
+  dplyr::select( ef1:ef12, SD ) %>%
+  slice( 1:50 )
+data_all_12.tmp %>% dplyr::select( SD) %>% round(., 1 ) %>% table %>% plot
+```
+Notes: Person standard deviation complements long string, because if one participant choose a different option one time, it would not be noticeable in Longstring. But it would be noticeable in person standard deviation. Again, the same 18 participants were conspicuous.
+
+# Sample
+```{r}
+table(data_all_12$gender)
+mean(data_all_12$age);median(data_all_12$age);range(data_all_12$age);table(data_all_12$age)
+hist(data_all_12$age)
+table(data_all_12$edu)
+```
+Notes: 
+it is a more ore less young, female, student sample. Details in the manuscript
+
+# Descriptive item statistics
+
+## Graphical analysis and standard parameters
+```{r}
+data_all_12$ERF <- rowMeans(data_all_12[c("ef1","ef2","ef3","ef4","ef5","ef6","ef7","ef8","ef9","ef10","ef11","ef12")], na.rm=TRUE)
+
+data_all_12 %>%
+  dplyr::select(ef1:ef12) %>%
+  rename(ef01=ef1, ef02=ef2, ef03=ef3, ef04=ef4, ef05=ef5, ef06=ef6, ef07=ef7,ef08=ef8, ef09=ef9)%>%
+  pivot_longer(c(ef01:ef12), names_to = "key", values_to="value") -> Long
+
+
+ggplot(Long, aes(key,value))+
+  stat_boxplot(geom="errorbar",width=0.5)+
+  geom_boxplot()+
+  scale_x_discrete()+
+  labs(x="Variables of the scale", y="Values", title="Boxplot")+
+  geom_hline(yintercept=2.5 ,colour="red")+
+  ylim(1,5)
+  
+
+data_all_12 %>%
+  dplyr::select(ef1:ERF) %>%
+  psych::describe() %>%
+  as.data.frame() %>%
+  dplyr::select(c(n,mean,sd,median,min,max)) -> Item_describe
+
+#Skew (Measure of the skewness of the distribution)
+  #Skew = 0 -> symmetrical
+  #Skew > 0 -> right-skewed
+  #Skew < 0 -> left-skewed
+#Excess (Kurtosis) (Measure of steepness of the distribution)
+  #Excess = 0 -> Curvature corresponds to normal distribution
+  #Excess > 0 -> narrower distribution
+  #Excess < 0 -> wider distribution
+
+
+# Shapiro-Test, because high power, but test not valid because we only have 5 answer steps, results will prove this
+# Grafic of choice is q-q-Plot, that displays deviation from normal distribution.
+
+ggplot(data_all_12, aes(sample=ef1)) + labs(title="ef1") + stat_qq() -> g1
+ggplot(data_all_12, aes(sample=ef2)) + labs(title="ef2") + stat_qq() -> g2
+ggplot(data_all_12, aes(sample=ef3)) + labs(title="ef3") + stat_qq() -> g3
+ggplot(data_all_12, aes(sample=ef4)) + labs(title="ef4") + stat_qq() -> g4
+ggplot(data_all_12, aes(sample=ef5)) + labs(title="ef5") + stat_qq() -> g5
+ggplot(data_all_12, aes(sample=ef6)) + labs(title="ef6") + stat_qq() -> g6
+ggplot(data_all_12, aes(sample=ef7)) + labs(title="ef7") + stat_qq() -> g7
+ggplot(data_all_12, aes(sample=ef8)) + labs(title="ef8") + stat_qq() -> g8
+ggplot(data_all_12, aes(sample=ef9)) + labs(title="ef9") + stat_qq() -> g9
+ggplot(data_all_12, aes(sample=ef10)) + labs(title="ef10") + stat_qq() -> g10
+ggplot(data_all_12, aes(sample=ef11)) + labs(title="ef11") + stat_qq() -> g11
+ggplot(data_all_12, aes(sample=ef12)) + labs(title="ef12") + stat_qq() -> g12
+grid.arrange(g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12)
+rm(g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12)
+# H0 Shapiro : empirical distribution = normal distribution
+data_all_12 %>%
+  dplyr::select(ef1:ERF) %>%
+  apply(2, shapiro.test) -> ItemShapiro
+sapply(ItemShapiro, function(x) x[1]) %>% as.numeric -> Sh.Statistic
+sapply(ItemShapiro, function(x) x[2]) %>% as.numeric -> Sh.pWert
+data.frame(Item_describe, Sh.Statistic,Sh.pWert) -> table
+rm(ItemShapiro,Item_describe)
+```
+Notes:
+Median of ERF score is 3.16
+
+Over all, every item is on average above 2.5 (2.7 to 3.67). Shapiro-Wilk is significant for every item, but that is rather irrelevant (ordinal data). 
+
+Distribution of means/medians of items could also be an indication that option three was often chosen because of the 5 answer-options. If one cannot decide for one option, one could always choose option 3. If, however, 2.5 were defined as the middle of the total score, all test persons would already have a slightly higher FlexER score.
+Especially for items 1,4,6,8,9, and 12, q1-q3 (75% of values) are between 3 and 4.
+
+# Item difficulty
+```{r}
+# Classical method of difficulty
+# sum(item, na.rm = TRUE)/ maximale.summe*100 
+# Amount of participants that responded to the item
+# sum of all items
+# maximum sum of items responds (hypothetical)
+Difficulty <- c()
+tmp<- data.frame(data_all_12[c("ef1","ef2","ef3","ef4","ef5","ef6","ef7","ef8","ef9","ef10","ef11","ef12","ERF")])
+n <- NROW(data_all_12)*(4) # Amount of participants * highes possible value
+for(i in 1:length(tmp)){
+  tmp[,i] <- recode(tmp[,i], '1=0; 2=1; 3=2; 4=3; 5=4')
+  Difficulty[i] <- sum(tmp[,i])/n*100
+}
+table <- cbind(table, Difficulty)
+rm(tmp)
+# Pi = sum of values of all items across all participants / n*(k-1)
+# Formula taken from Keleva und Moosbrugger (2007, S. 79)... k response levels, should be coded ascending from 0 . In the end it is “the quotient of the i-th column sum ... and the maximum possible column sum, multiplied by the factor 100” (Keleva & Moosbrugger, 2007, S. 79). Correlation between Pi and mean is 1.0 across all items; there is no reason to present this statistic, although it is often done.
+
+# Term "Difficulty" is difficult to aplly in terms of content, because of disposition
+# Difficulty 0 (= hard) to 100 (= easy)
+# Difficulty < 20 floor effect
+# difficulty > 80 ceiling effect
+
+
+pDahl <- function (Item , maxCode) {
+( mean(Item) / maxCode ) * 100
+}
+
+data_all_12 %>%
+  dplyr::select(ef1:ERF) %>%
+  apply(2, pDahl, 5) %>%
+  round(.,2) -> Dahl
+data.frame(table, Dahl) %>%
+  tibble::rownames_to_column() -> table
+
+# Comparison of methods --> perfect correltion
+# table <- table[-13,]
+# cor.test(table$Difficulty, table$Dahl, method=c("pearson"))
+# mod <- lm(Dahl ~ Difficulty,data=table)
+# summary(mod)
+# plot(table$Difficulty, table$Dahl)
+# abline(mod, col="red")
+
+```
+Notes: Difficulty is in a reasonable range (42,61 to 77,72). There are no items with floor or ceiling effects.  
+
+If we look at standard deviation, we see a range of 1.02 to 1.29. Looks fine, although SD could be a little higher. But scale level is inappropriate, therefore an interpretatoin is difficult. ERF score (quasi-interval scaled) it is appropriate. SD should be greater.
+
+
+## Create table
+```{r}
+table %>%
+  dplyr::select(rowname,n,mean,sd,min,max,median,Sh.Statistic,Sh.pWert,Dahl,Difficulty) %>%
+  mutate(mean = round(mean,2),
+      sd = round(sd,2),
+      Sh.Statistik= round(Sh.Statistic,2),
+      Sh.pWert = round(Sh.pWert,2),
+      max = round(max,2),
+      median = round(median,2),
+      Difficulty = round(Difficulty,2)) %>%
+  rename (Item=rowname,
+      M = mean,
+      SD =sd,
+      Min. = min,
+      Max. = max,
+      Median = median,
+      "S-W-Test" = Sh.Statistic,
+      "S-W-pWert" = Sh.pWert,
+      "DahlKoeff" = Dahl) -> table
+# items were kept in german
+Long %>%
+  mutate ( Variable = dplyr::recode( key,
+  ef01 = "ef01 Wenn mich meine Emotionen \n bei der erfolgreichen Erledigung einer Aufgabe \n hindern, habe ich Strategien, um meine \nGefühle zu beeinflussen",
+  ef02 = "ef02 Wenn es einem Ziel nützt, \nverringere ich in manchen Situationen auch positive Gefühle",
+  ef03 = "ef03 Wenn ich meine positiven Gefühle reduzieren muss, \ndenke ich über mehrere Strategien nach, \nbevor ich entscheide, wie ich mit meinen Emotionen umgehen soll",
+  ef04 = "ef04 Wenn ich mit einer Strategie nicht \nerfolgreich meine Stimmung verändern kann, \nprobiere ich eine andere Strategie aus",
+  ef05 = "ef05 Ich finde es eine Herausforderung, \nmeine Emotionen den sich ändernden Umständen anzupassen",
+  ef06 = "ef06 Wenn ich weniger negative Gefühle\n empfinden möchte, habe ich mehrere Methoden, dies zu erreichen",
+  ef07 = "ef07 Ich wende immer die gleiche Strategie an, \num mit meinen Gefühlen umzugehen",
+  ef08 = "ef08 Wenn ich mehr positive Gefühle empfinden möchte, \nhabe ich mehrere Möglichkeiten, dies zu erreichen",
+  ef09 = "ef09 Ich habe selten die Wahl zwischen \nverschiedenen Strategien, um mit meinen Gefühlen umzugehen",
+  ef10 = "ef10 Wenn notwendig, verstärke ich auch ein \nnegatives Gefühl, um erfolgreich zu sein",
+  ef11 = "ef11 Wenn ich mich in eine negative Stimmung \nversetzen möchte, habe ich Strategien, dies zu erreichen",
+  ef12 = "ef12 Wenn ich meine Gefühle verändern möchte, \nweiß ich, dass es dafür verschiedene Strategien gibt",)) %>%
+  mutate( Values = factor(value, labels = c( "1 stimmt überhaupt nicht", "2","3 neutral", "4","5 stimmt vollkommen")))-> Long
+
+ggplot(Long, aes(x= Variable, group=Values, fill=Values)) + 
+      scale_fill_grey() +
+      geom_bar(stat = "count", position = "stack" ) +
+      labs( y="Amount of participants") +
+      coord_flip()
+```
+Notes. Again we see well known item characteristics of items 1, 4, 6, 8, 9, and 12. Only few participants chose 1 and the most chosen categories were 3 and 4.
+
+# Statistics of items and scale
+
+```{r}
+# Homogeneity of items 
+# heat diagram
+data_all_12 %>%
+  dplyr::select( ef1:ef12 ) %>%
+  cor( use = "pair" ) %>%
+  melt() %>%
+  ggplot(data = ., aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white",
+  #scale_fill_gradient2(low = "white", high = "black", mid = "grey50",
+  midpoint = 0, limit = c(-1,1), space = "Lab",
+  name="Pearson\nCorrelation") +
+  labs( x= "FlexER12", y="FlexER12") +
+  theme_bw()
+
+data_all_12 %>%
+  dplyr::select(ef1:ef12) %>%
+  cor(use="pair") %>%
+  round(3) -> Corr
+Corr
+
+# count correlations above or under threshold
+sum(abs(Corr)< .3)/2 #48 unter .3
+(sum(abs(Corr)>= .7)-nrow(Corr))/2 # 0 larger than .7
+sum( Corr<0)/2 # 7 less than 0
+
+# Discriminatory power
+# Discriminatory power (r it) is correlation of single item with sum score of items, that capture a latent dimension
+# Item whole correlation for this item against the scale without this item -> Part-Wohle-Korrelation
+r_it <- psych::alpha(data_all_12[c("ef1","ef2","ef3","ef4","ef5","ef6","ef7","ef8","ef9","ef10","ef11","ef12","ERF")] ,check.keys = FALSE, warnings = FALSE )
+r_it <- r_it[["item.stats"]][["r.drop"]]
+table <- cbind(table,r_it)
+# Discriminatory power of items should be larger than .25 or .30 Lower discriminatory power should only be accepted if difficulty is extreme. A prerequisite for a meaningful calculation is that the dimensionality of the test has been checked or determined beforehand. The discriminatory power depends on item dispersion and item difficulty. The more extreme the difficulty deviates from the medium range, the lower the discriminatory power --> For items of medium difficulty, one should expect the highest discriminatory power.
+
+# Internal consistency 
+alpha <- psychometric::alpha(data_all_12[c("ef1","ef2","ef3","ef4","ef5","ef6","ef7","ef8","ef9","ef10","ef11","ef12","ERF")])
+table$alpha <- alpha
+rm(Corr,Long)
+```
+Notes: Warning not relevant, because we are not interested in frequencies nor load values. r.drop should not be affected.
+Discriminatory power should be viewed with caution, as dimensionality has not been tested.
+EF5 seems to not belong to the scale in r_it. EF7 likewise... this is consistent because both items become conspicuous again later.
+EF2, EF3, EF10, and EF11 share less with the other of the items (later they load on a second factor) Discriminatory power is at the minimum measure. Internal consistency (0.76) is also not surprising --> The suspicion is confirmed that not all items are the same dimension. 
+ 
+Over all there are 5 correlation <0 and 48 correlation < .30; 19 correlation are between .30 and .70; no correlation is > .70
+EF5 and EF7 only have low correlations with other items. 
+EF1 has middle to high correlations with EF4, EF6, EF8 and EF12 (> .30). this is reflected among these items as a whole, e.g. EF12 also shows expected correlations with EF8, EF6, and EF4.
+Interpretation: 
+Some correlations are as expected, EF6 and EF8 are similar items but with other valence. 
+It is fascinating that EF5, EF7, and EF9 are recoded items and EF5 and EF7 seem to not fit into the scale. EF9 is also a "bad" items in terms of correlations.
+These items seem to be different in terms of content as well, because they seem to be less "specific".
+Further consideration: if items have a high correlation (EF6 and EF8), variances of error could be correlated.
+
+
+# Exploratory factor analysis
+
+## Prerequisites
+```{r}
+# Tet for normal distribution possible test:
+  # Mardia ("mardia") based on skew and kurtosis; but there is research showing that the power of this test is not high enough
+  # Royston ("royston") based on Shapiro Wilking Test and is used in small samples (n < 5000)
+  # Henze-Zirkler ("hz") over all good, power is also OK when n > 75
+  # Dornik-Haansen ("dh") is appropriate, but not evaluated sufficiently, can be optimized by ("energy") Energy-Test (one gets the E-Statistic)
+# Procedure would be to test with several methods including graphics (Farrell et al 2007)
+# Tests share the same assumption: H0: Data is MVN and H1: Data is not MVN
+  # "adj" = adjusted quantile methodbased on Mahalanobis distance
+    #  Depends on distance between cdf of Chi-Square and ecdf (empirical cumulative distribution function) of samples in tails
+# one could create "box" (Boxplot) and "qq"/"qqPlot" and do different tests: 
+  #"SW" = ShapiroWilking; "CVM" = Cramers-von Mises, "Lillie" = Lilliefors, "SF" = Shapiro-Francia, "AD" = Anderson-Darling
+mvn(data_all_12[,5:16],mvnTest=c("hz"),multivariatePlot="qq",multivariateOutlierMethod="adj",univariatePlot="histogram",univariateTest="SW")
+
+# Two procedures to check for prerequisites of EFA:
+  # Bartlett-Test on spherizity
+  # Kaiser-Meyer-Olkin (KMO) to check whether the data set is suitable for EFA
+
+# Bartlett-Test tests null hypothesis that correlation matrix is an identity matrix
+
+data_all_12 %>%
+  dplyr::select(ef1:ef12) %>%
+  cor( use = "pairwise.complete.obs" ) -> Items.cor
+  anz <- NROW( data_all_12 )
+  cortest.bartlett( Items.cor, n = anz )
+  
+# H0 is rejected because X²(66,N=1280) = 3117, p<.001
+# Null hypothesis of Bartlett-Test is identity matrix (unity matrix), a quadratic matrix with 1.0 on diagonal and 0.0 on upper and lower triangular matrix. This would mean that there is no relationship between items.
+# Results show that our data had a good basis for EFA. If p > .05: (a) correlation between items would be to low, or (b) n is not high enough
+
+# KMO - Coefficients give indication, which variables are suitable for EFA
+  
+# (Measure of Sampling Adequacy) = MSA  
+  # < .50 - barely acceptable
+  # .50 - .70 - moderate
+  # .70 - .80 - good
+  # .80 - .90 - very good
+  # > .90 - excellent.
+  
+kmo <- KMO(Items.cor)
+MSAi <- unlist(kmo$MSAi)
+cut(MSAi, c(0, .5, .7, .8, .9, 1.0)) %>% table
+kmo$MSA
+# 3 Item are moderate, others are at least good  
+# Sum-MSA = 0.81 that is good to very good
+```
+Notes:
+test for multivariate and univariate normal distribution. It is recommended to use a number of tests and compare results. 
+
+Does it make sense? - Not really because we have ordinal data.
+
+Bartlett-Test tests H0 if correlation matrix is a identity matrix. If this was the case, virables would have nothing in common and EFA would make no sense. But a prerequisite of this thest is normal distribution! But the problemdoes not occur when test becomes significant.
+
+Kaiser-Meyer-Olkin (KMO) shows that over all all items are good. 
+
+## EFA
+```{r}
+# data set with relevant data
+data_all_12 %>% dplyr::select( ef1:ef12 ) -> efa
+# parallel analysis for factor analysis and PCA
+fa.parallel(efa, fm="mle", fa="both", main = "Analysis of main axis")$fa.values # 4 factors in PFA  
+# extraction methods MAPS and VSS 
+nfactors(efa, rotate="oblimin", fm="mle") # MAP2; VSS2; BIC4
+# Number of factors with parallel analysis PCA!
+ev <- eigen(cor(efa))
+# Main components!
+ap <- parallel(subject=nrow(efa), var=ncol(efa), rep=100,cent=.05, model ="components")
+nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
+
+plotnScree(nS) # 3 in PCA
+
+# Methode Agreement Approach
+fac <- n_factors(efa, type = "FA", algorithm = "mle", package = "all")
+print(fac)
+plot(fac)
+fac$Method # 6 of 25 tests show 1 Dimension, 6 test show 3 
+
+# Kaiser-Criterion: easiest to use and also the worst criterion: Choose as many factors as there are eigenvalues > 1.0
+# Screetest: all possible eigenvalues (as many as there are items) are ordered according to their size. One has to look for the "dip"
+# Parallel analysis according to Horn: Where does the course of the eigenvalues of simulated data (dotted red line) cross the course of empirical values (blue triangles)
+# Explained variance (no interpretation directly from figure): Raykov and Marcoulides (2011, p. 51) show that eigenvalues can be seen as proxy of an alternative distribution of variances (the correlation matrix). If one follows the cumulative explanation of the total variance by the individual factors, one can either choose an a-priori threshold value as a measure for the number of factors or one looks at when the increase by an additional factor becomes significantly smaller compared to the previous increase; however, this corresponds 1:1 to the interpretation of the screen test.
+
+# EFA, Inspection of 1, 2, 3, 5 solution 
+fa1 <- fa(efa, fm="ml", nfactors=1, rotate = "oblimin") # further option is to change estimate and to change n.iter if bootstrapping for CI is requested
+print.psych( fa1, cut=0.05,sort = TRUE )
+summary(fa1$communality) # Commonality
+summary(fa1$complexity) # index of complexity
+fa1$RMSEA # fa1$RMSEA[1] or Index
+fa1$fit.off # Fit based upon off-diagonal values
+
+# Solutions with 2 and 3 factors 
+fa2 <- fa( efa, fm="ml", nfactors=2, rotate = "oblimin" )
+fa3 <- fa( efa, fm="ml", nfactors=3, rotate = "oblimin" )
+fa4 <- fa( efa, fm="ml", nfactors=4, rotate = "oblimin" )
+print.psych( fa2 , cut=0.05, sort = TRUE )
+print.psych( fa3, cut=0.05,sort = TRUE )
+print.psych( fa4, cut=0.05,sort = TRUE )
+# Table with factor loadings
+  # columns
+    # Item
+    # Item position
+    # description for factor 1 to 3
+    # Commonality
+    # Uniqueness (= 1-commonality) 
+    # index of complexity
+# factors are ordered according to the height of eigenvalues ( ML1 to ML6)
+# white space: factor loading is < .30 
+
+# Interpretations 
+  # Use item wording to explain loadings
+  # use statistical values
+
+# explained variance
+    # block 1: sum of explained variance; block 2 (last two rows) are current model
+  # SSlaodings = Eigenwerte der FAktoren
+# Model fit
+    # RMSEA < .05 for good and < .08 for acceptable fit
+    # Fit based upon off-diagonal values should be > 0.95 
+```
+Notes.
+Amount of factors: 
+
+there are lots of methods, but non is excellent. Parallel analysis seems to make sense. Otherwise: theory + CFA with a good fit
+
+Orthogonal rotation: 
+
+following analyses refer to oblimin 
+
+## grafical illustration of results
+```{r}
+# ATTENTION grafics package is only a temporary soultion
+attributes(fa1$loadings)$dimnames[[2]] <- c("?")
+fa.diagram(fa1,cut=.05)
+
+attributes(fa2$loadings)$dimnames[[2]] <- c("?","?")
+fa.diagram(fa2,cut=.05)
+
+attributes(fa3$loadings)$dimnames[[2]] <- c("?","?","?")
+fa.diagram(fa3,cut=.05)
+
+attributes(fa4$loadings)$dimnames[[2]] <- c("?","?","?","?")
+fa.diagram(fa4,cut=.05)
+```

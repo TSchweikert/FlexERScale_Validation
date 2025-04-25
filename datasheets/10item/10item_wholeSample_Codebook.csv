@@ -1,0 +1,45 @@
+﻿Deutsch;fehlende Werte=NA;
+Variablenname;Variablenbeschreibung;Werte der Variable
+CASE;Teilnehmer ID;ganze Zahlen
+age;Alter der Teilnehmenden in Jahren;volle Jahre
+gender;angegebenes Geschlecht der Teilnehmenden;female | male | divers
+education;höchster Bildungsabschluss der Schulbildung;Hauptschule | Realschule | Mittlere Reife | Fachabitur | Abitur | Abgeschlossene Lehre | Fachhochschul-/Hochschulabschluss
+job;höchster Bildungsabschluss bei Berufsausbildung;none | Ausbildung | Fachhochschulabschluss | Hochschulabschluss | Promotion
+WHO1;In den letzten zwei Wochen … war ich froh und guter Laune.;0=zu keinem Zeitpunkt | 1=ab und zu | 2=etwas weniger als die Hälfte der Zeit | 3=etwas mehr als die Hälfte der Zeit | 4=meistens | 5=die ganze Zeit
+WHO2;In den letzten zwei Wochen … habe ich mich ruhig und entspannt gefühlt.;0=zu keinem Zeitpunkt | 1=ab und zu | 2=etwas weniger als die Hälfte der Zeit | 3=etwas mehr als die Hälfte der Zeit | 4=meistens | 5=die ganze Zeit
+WHO3;In den letzten zwei Wochen … habe ich mich energisch und aktiv gefühlt.;0=zu keinem Zeitpunkt | 1=ab und zu | 2=etwas weniger als die Hälfte der Zeit | 3=etwas mehr als die Hälfte der Zeit | 4=meistens | 5=die ganze Zeit
+WHO4;In den letzten zwei Wochen … habe ich mich beim Aufwachen frisch und ausgeruht gefühlt.;0=zu keinem Zeitpunkt | 1=ab und zu | 2=etwas weniger als die Hälfte der Zeit | 3=etwas mehr als die Hälfte der Zeit | 4=meistens | 5=die ganze Zeit
+WHO5;In den letzten zwei Wochen … war mein Alltag voller Dinge, die mich interessieren.;0=zu keinem Zeitpunkt | 1=ab und zu | 2=etwas weniger als die Hälfte der Zeit | 3=etwas mehr als die Hälfte der Zeit | 4=meistens | 5=die ganze Zeit
+FLEXER1;Wenn mich meine Emotionen bei der erfolgreichen Erledigung einer Aufgabe hindern, habe ich Strategien, um meine Gefühle zu beeinflussen.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER2;Wenn es einem Ziel nützt, verringere ich in manchen Situationen auch positive Gefühle.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER3;Wenn ich meine positiven Gefühle reduzieren muss, habe ich mehrere Strategien, dies zu erreichen.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER4;Wenn ich mit einer Strategie nicht erfolgreich meine Stimmung verändern kann, probiere ich eine andere Strategie aus.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER5;Wenn ich weniger negative Gefühle empfinden möchte, habe ich mehrere Methoden, dies zu erreichen.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER6;Wenn ich mehr positive Gefühle empfinden möchte, habe ich mehrere Möglichkeiten, dies zu erreichen.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER7;Ich habe die Wahl zwischen verschiedenen Strategien, um mit meinen Gefühlen umzugehen.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER8;Wenn notwendig, verstärke ich auch ein negatives Gefühl, um erfolgreich zu sein.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER9;Wenn ich mich in eine negative Stimmung versetzen möchte, habe ich Strategien, dies zu erreichen;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+FLEXER10;Wenn ich meine Gefühle verändern möchte, weiß ich, dass es dafür verschiedene Strategien gibt.;1=sehr zutreffend | 2=zutreffend | 3=ein wenig zutreffend | 4=nicht zutreffend
+;;
+English Translation;missings=NA;
+variable name;variable description;variable values
+CASE;Particpant ID;
+age;participants age in years;full years
+gender;Specified gender of the participants;female | male | diverse
+education;Highest educational qualification from school education;secondary modern school | intermediate school | intermediate qualification | technical college entrance qualification | general higher education entrance qualification | completed apprenticeship | university of applied sciences/university degree
+job;Highest educational qualification in vocational training;none | training | university of applied sciences degree | university degree | doctorate
+WHO1;In the last two weeks … I felt happy and in a good mood;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO2;In the last two weeks … I felt calm and relaxed;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO3;In the last two weeks … I felt energetic and active;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO4;In the last two weeks ... I woke up feeling fresh and rested;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO5;In the last two weeks … my daily life was full of things that interest me;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+FLEXER1;When my emotions interfere with completing a task successfully, I have strategies to influence my feelings;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER2;If it benefits a goal, I also reduce positive feelings in certain situations;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER3;When I need to reduce my positive feelings, I have several strategies to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER4;If I cannot successfully change my mood with one strategy, I try another strategy;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER5;If I want to feel less negative emotions, I have several methods to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER6;If I want to feel more positive emotions, I have several options to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER7;I have a choice of different strategies to deal with my feelings;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER8;If necessary, I also amplify a negative feeling to be successful;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER9;If I want to put myself in a negative mood, I have strategies to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER10;If I want to change my feelings, I know that there are different strategies to do so;1=very true | 2=true | 3=somewhat true | 4=false

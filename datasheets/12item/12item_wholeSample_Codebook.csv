@@ -1,0 +1,36 @@
+Deutsch;fehlende Werte=NA;
+Variablenname;Variablenbeschreibung;Werte der Variable
+Number;fortlaufende Nummer;Nummer
+age;Alter der Teilnehmenden in Jahren;volle Jahre
+gender;angegebenes Geschlecht der Teilnehmenden;weiblich | männlich | keine Angabe
+ef1;Wenn mich meine Emotionen bei der erfolgreichen Erledigung einer Aufgabe hindern, habe ich Strategien, um meine Gefühle zu beeinflussen.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef2;Wenn es einem Ziel nützt, verringere ich in manchen Situationen auch positive Gefühle.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef3;Wenn ich meine positiven Gefühle reduzieren muss, denke ich über mehrere Strategien nach, bevor ich entscheide, wie ich mit meinen Emotionen umgehen soll.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef4;Wenn ich mit einer Strategie nicht erfolgreich meine Stimmung verändern kann, probiere ich eine andere Strategie aus.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef5;Ich finde es eine Herausforderung, meine Emotionen den sich ändernden Umständen anzupassen. (umpolen);1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef6;Wenn ich weniger negative Gefühle empfinden möchte, habe ich mehrere Methoden, dies zu erreichen.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef7;Ich wende immer die gleiche Strategie an, um mit meinen Gefühlen umzugehen. (Umpolen);1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef8;Wenn ich mehr positive Gefühle empfinden möchte, habe ich mehrere Möglichkeiten, dies zu erreichen.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef9;Ich habe selten die Wahl zwischen verschiedenen Strategien, um mit meinen Gefühlen umzugehen. (Umpolen);1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef10;Wenn notwendig, verstärke ich auch ein negatives Gefühl, um erfolgreich zu sein.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef11;Wenn ich mich in eine negative Stimmung versetzen möchte, habe ich Strategien, dies zu erreichen;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+ef12;Wenn ich meine Gefühle verändern möchte, weiß ich, dass es dafür verschiedene Strategien gibt.;1=„stimmt vollkommen“ | 2 | 3=„neutral“ | 4 | 5=„stimmt überhaupt nicht“
+;;
+;;
+English Translation;missings=NA;
+variable name;variable description;variable values
+Number;consecutive number;number
+age;participants age in years;full years
+gender;Specified gender of the participants;female | male | not specified
+ef1;When my emotions interfere with the successful execution of a task, I have strategies to influence my feelings.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef2;If it helps a goal, I may also reduce positive feelings in some situations.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef3;If I have to reduce my positive feelings, I think about several strategies before I decide how to deal with my emotions.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef4;If I cannot successfully change my mood with one strategy, I try another strategy.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef5;I find it challenging to adapt my emotions to changing circumstances. (Recode);1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef6;If I want to feel less negatively, I have several methods to achieve this.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef7;I always use the same strategy to deal with my feelings. (Recode);1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef8;If I want to feel more positively, I have several ways to achieve this.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef9;I rarely have the choice between different strategies to deal with my feelings. (Recode);1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef10;If necessary, I also intensify a negative feeling in order to be successful.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef11;If I want to put myself in a negative mood, I have strategies to achieve this.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
+ef12;If I want to change my feelings, I do know that there are different strategies.;1=„completely true“ | 2 | 3=„neutral“ | 4 | 5=„not true at all“
