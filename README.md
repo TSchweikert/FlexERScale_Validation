@@ -3,7 +3,7 @@
 **The FlexER Scale** is a new self-report measure to assess the context- and goal-dependent variability of emotion regulation strategies. The scale was derived from theoretical models of emotion regualtion flexibility and validated using data from three independet samples (*N* = 857). This repository contains materials and scripts for validation of both, the 12-item and the final 10-item version of the FlexER Scale.
 
 ## Content of the folders
-* Flex_ER Scale: Contains a PDF file of the German version of the FlexER Scale
+* [Flex_ER Scale](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/FlexER_Scale): Contains a PDF file of the German version of the FlexER Scale
 * datasheets: Contains the datasheets and respective code books of all relevant data used to validate the 12-item version and the final 10-item version of the FlexER Scale
 * figures: All figures that are relevant for the validation study
 * renv: Folder created by the R renv-package
