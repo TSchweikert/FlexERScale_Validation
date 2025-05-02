@@ -3,11 +3,11 @@
 **The FlexER Scale** is a new self-report measure to assess the context- and goal-dependent variability of emotion regulation strategies. The scale was derived from theoretical models of emotion regualtion flexibility and validated using data from three independet samples (*N* = 857). This repository contains materials and scripts for validation of both, the 12-item and the final 10-item version of the FlexER Scale.
 
 ## Content of the folders
-* Flex_ER Scale: Contains a PDF file of the German version of the FlexER Scale
-* datasheets: Contains the datasheets of all relevant data used to validate the 12-item version and the final 10-item version of the FlexER Scale
-* figures: All figures that are relevant for the validation study
-* renv: Folder created by the R renv-package
-* scripts: Contains the script of the validation of the 12-item version, the script of the validation of the 10-item version, and a script with a R function (item difficulty)
+* [Flex_ER Scale](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/FlexER_Scale): Contains a PDF file of the German version of the FlexER Scale
+* [datasheets](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/datasheets): Contains the datasheets and respective code books of all relevant data used to validate the 12-item version and the final 10-item version of the FlexER Scale
+* [figures](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/figures): All figures that are relevant for the validation study
+* [renv](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/renv): Folder created by the R renv-package
+* [scripts](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/scripts): Contains the script of the validation of the 12-item version, the script of the validation of the 10-item version, and a script with a R function (item difficulty)
 
 ## Requirements
 - R version: 4.4.1
