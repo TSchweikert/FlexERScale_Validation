@@ -31,15 +31,15 @@ job;Highest educational qualification in vocational training;none | training | u
 WHO1;In the last two weeks … I felt happy and in a good mood;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
 WHO2;In the last two weeks … I felt calm and relaxed;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
 WHO3;In the last two weeks … I felt energetic and active;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-WHO4;In the last two weeks ... I woke up feeling fresh and rested;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO4;In the last two weeks … I woke up feeling fresh and rested;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
 WHO5;In the last two weeks … my daily life was full of things that interest me;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-FLEXER1;When my emotions interfere with completing a task successfully, I have strategies to influence my feelings;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER2;If it benefits a goal, I also reduce positive feelings in certain situations;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER3;When I need to reduce my positive feelings, I have several strategies to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER4;If I cannot successfully change my mood with one strategy, I try another strategy;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER5;If I want to feel less negative emotions, I have several methods to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER6;If I want to feel more positive emotions, I have several options to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER7;I have a choice of different strategies to deal with my feelings;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER8;If necessary, I also amplify a negative feeling to be successful;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER9;If I want to put myself in a negative mood, I have strategies to achieve this;1=very true | 2=true | 3=somewhat true | 4=false
-FLEXER10;If I want to change my feelings, I know that there are different strategies to do so;1=very true | 2=true | 3=somewhat true | 4=false
+FLEXER1;When my emotions interfere with the successful execution of a task, I have strategies to influence my feelings.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER2;If it helps a goal, I may also reduce positive feelings in some situations.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER3;If I must reduce my positive feelings, I have several strategies to achieve this.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER4;If I cannot successfully change my mood with one strategy, I try another strategy.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER5;If I want to feel less negatively, I have several methods to achieve this.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER6;If I want to feel more positively, I have several ways to achieve this.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER7;I have the choice between different strategies to deal with my feelings.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER8;If necessary, I also intensify a negative feeling in order to be successful.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER9;If I want to put myself in a negative mood, I have strategies to achieve this.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
+FLEXER10;If I want to change my feelings, I do know that there are different strategies.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
