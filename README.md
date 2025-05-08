@@ -1,13 +1,13 @@
-# FlexERScale
+# FlexER-Scale
 
-**The FlexER Scale** is a new self-report measure to assess the context- and goal-dependent variability of emotion regulation strategies. The scale was derived from theoretical models of emotion regualtion flexibility and validated using data from three independet samples (*N* = 857). This repository contains materials and scripts for validation of both, the 12-item and the final 10-item version of the FlexER Scale.
+**The FlexER-Scale** is a new self-report measure to assess the context- and goal-dependent variability of emotion regulation strategies. The scale was derived from theoretical models of emotion regulation flexibility and the items were developed in several item validation and reduction steps. The final, 10-item version was validated using data from three independet samples (*final N* = 680). This repository contains materials and scripts for validation of both, the 12-item and the final 10-item version of the FlexER-Scale (see preprint at [https://osf.io/preprints/psyarxiv/hprbz](https://osf.io/preprints/psyarxiv/hprbz)). Further publications related to the FlexER-Scale can be found at OSF ([https://osf.io/fghr8/](https://osf.io/fghr8/)). 
 
 ## Content of the folders
-* [Flex_ER Scale](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/FlexER_Scale): Contains a PDF file of the German version of the FlexER Scale
-* [datasheets](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/datasheets): Contains the datasheets and respective code books of all relevant data used to validate the 12-item version and the final 10-item version of the FlexER Scale
-* [figures](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/figures): All figures that are relevant for the validation study
-* [renv](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/renv): Folder created by the R renv-package
-* [scripts](https://github.com/ChScheffel/FlexERScale_Validation/tree/main/scripts): Contains the script of the validation of the 12-item version, the script of the validation of the 10-item version, and a script with a R function (item difficulty)
+* [Flex_ER Scale](https://github.com/TSchweikert/FlexERScale_Validation/tree/main/FlexER_Scale): Contains a PDF file of the German version of the FlexER-Scale
+* [datasheets](https://github.com/TSchweikert/FlexERScale_Validation/tree/main/datasheets): Contains the datasheets and respective code books of all relevant data used to validate the 12-item version and the final 10-item version of the FlexER-Scale
+* [figures](https://github.com/TSchweikert/FlexERScale_Validation/tree/main/figures): All figures that are relevant for the validation study
+* [renv](https://github.com/TSchweikert/FlexERScale_Validation/tree/main/renv): Folder created by the R renv-package
+* [scripts](https://github.com/TSchweikert/FlexERScale_Validation/tree/main/scripts): Contains the script of the validation of the 12-item version, the script of the validation of the 10-item version, and a script with a R function (item difficulty)
 
 ## Requirements
 - R version: 4.4.1
@@ -34,4 +34,4 @@ This project is licensed under the CC-BY 4.0 License. See the `LICENSE-CC-BY` fi
 
 ## Citation
 If you use this scale, please cite the following:
-> Gärtner, A., Scheffel, C., Schweikert, T., & Dörfel, D. (2025, March 13). The FlexER-Scale: A new Self-report Measure of Individual Differences in Emotion Regulation Flexibility. https://doi.org/10.31234/osf.io/hprbz_v1
+> Gärtner, A., Scheffel, C., Schweikert, T., & Dörfel, D. (2025). The FlexER-Scale: A new Self-report Measure of Individual Differences in Emotion Regulation Flexibility. https://doi.org/10.31234/osf.io/hprbz
