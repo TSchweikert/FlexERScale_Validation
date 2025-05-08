@@ -28,11 +28,11 @@ age;participants age in years;full years
 gender;Specified gender of the participants;female | male | diverse
 education;Highest educational qualification from school education;secondary modern school | intermediate school | intermediate qualification | technical college entrance qualification | general higher education entrance qualification | completed apprenticeship | university of applied sciences/university degree
 job;Highest educational qualification in vocational training;none | training | university of applied sciences degree | university degree | doctorate
-WHO1;In the last two weeks … I felt happy and in a good mood;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-WHO2;In the last two weeks … I felt calm and relaxed;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-WHO3;In the last two weeks … I felt energetic and active;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-WHO4;In the last two weeks … I woke up feeling fresh and rested;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
-WHO5;In the last two weeks … my daily life was full of things that interest me;0=not at any time | 1=occasionally | 2=slightly less than half the time | 3=slightly more than half the time | 4=mostly | 5=all the time
+WHO1;In the last two weeks … I have felt cheerful and in good spirits;0=At no time | 1=Some of the time | 2=less than half of the time | 3=more than half of the time | 4=Most of the time | 5=All of the time
+WHO2;In the last two weeks … I have felt calm and relaxed;0=At no time | 1=Some of the time | 2=less than half of the time | 3=more than half of the time | 4=Most of the time | 5=All of the time
+WHO3;In the last two weeks … I have felt active and vigorous;0=At no time | 1=Some of the time | 2=less than half of the time | 3=more than half of the time | 4=Most of the time | 5=All of the time
+WHO4;In the last two weeks … I woke up feeling fresh and rested;0=At no time | 1=Some of the time | 2=less than half of the time | 3=more than half of the time | 4=Most of the time | 5=All of the time
+WHO5;In the last two weeks … my daily life has been filled with things that interest me;0=At no time | 1=Some of the time | 2=less than half of the time | 3=more than half of the time | 4=Most of the time | 5=All of the time
 FLEXER1;When my emotions interfere with the successful execution of a task, I have strategies to influence my feelings.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
 FLEXER2;If it helps a goal, I may also reduce positive feelings in some situations.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
 FLEXER3;If I must reduce my positive feelings, I have several strategies to achieve this.;1=I perfectly agree | 2=I agree" | 3=I agree a little | 4=I do not agree at all
