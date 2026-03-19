@@ -17,7 +17,7 @@ here::i_am("FlexERScale.Rproj")
 
 ## Data import
 ```{r}
-# please put the data file "Gesamt.csv" in the same folder as this script!
+# please put the data file "12item_wholeSample.csv" in the same folder as this script!
 
 data_all_12 <- read.table(here::here("datasheets", "12item", "12item_wholeSample.csv"),sep = ";", header=T, encoding = "UTF-8")
 data_all_12$X<- NULL # delete row numbers
