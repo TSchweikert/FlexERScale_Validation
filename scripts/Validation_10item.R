@@ -1,8 +1,8 @@
 ##############################################
 #
-# Validation of FlexER Scale - 10 Item Version
+# FlexER Scale - 10 Item Version
 #
-# Denise Dörfel, Anne Gärtner, Christoph Scheffel
+# Timo Schweikert, Denise Dörfel, Anne Gärtner, Christoph Scheffel
 #
 # Technische Universität Dresden
 ##############################################
