@@ -115,7 +115,7 @@ Notes: Person standard deviation complements long string, because if one partici
 # Sample
 ```{r}
 table(data_all_12$gender)
-mean(data_all_12$age);median(data_all_12$age);range(data_all_12$age);table(data_all_12$age)
+mean(data_all_12$age);sd(data_all_12$age);median(data_all_12$age);range(data_all_12$age);table(data_all_12$age)
 hist(data_all_12$age)
 table(data_all_12$edu)
 ```
