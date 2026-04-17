@@ -56,12 +56,14 @@ data_cad$edu <- factor(data_cad$edu , levels = c("1", "2", "3"), labels = c("Hau
 
 # extract relevant variables and rename
 df1 <- data_pat %>%
-  dplyr::select(record_id, age, sex, degree, degree_job, we01_01:we01_05, er_01_1:er_01_10)
+  dplyr::select(record_id, age, sex, degree, degree_job, we01_01:we01_05, er_01_1:er_01_10, er08_01:er08_10)
 df1 <- df1 %>%
   dplyr::rename(CASE = record_id, gender = sex, education = degree, job = degree_job,
                 WHO1 = we01_01, WHO2 = we01_02,  WHO3 = we01_03,  WHO4 = we01_04, WHO5 = we01_05, 
                 FLEXER1 = er_01_1, FLEXER2 = er_01_2, FLEXER3 = er_01_3, FLEXER4 = er_01_4, FLEXER5 = er_01_5,
-                FLEXER6 = er_01_6, FLEXER7 = er_01_7, FLEXER8 = er_01_8, FLEXER9 = er_01_9, FLEXER10 = er_01_10)
+                FLEXER6 = er_01_6, FLEXER7 = er_01_7, FLEXER8 = er_01_8, FLEXER9 = er_01_9, FLEXER10 = er_01_10,
+                ERQ1 = er08_01, ERQ2 = er08_02, ERQ3 = er08_03, ERQ4 = er08_04, ERQ5 = er08_05,
+                ERQ6 = er08_06, ERQ7 = er08_07, ERQ8 = er08_08, ERQ9 = er08_09, ERQ10 = er08_10)
                 
 
 df2 <- data_berndt %>%
@@ -82,13 +84,26 @@ df2_r$WHO3 <- df2_r$WHO3 - 1
 df2_r$WHO4 <- df2_r$WHO4 - 1
 df2_r$WHO5 <- df2_r$WHO5 - 1
 
+df2_r$ERQ1 <- NA
+df2_r$ERQ2 <- NA
+df2_r$ERQ3 <- NA
+df2_r$ERQ4 <- NA
+df2_r$ERQ5 <- NA
+df2_r$ERQ6 <- NA
+df2_r$ERQ7 <- NA
+df2_r$ERQ8 <- NA
+df2_r$ERQ9 <- NA
+df2_r$ERQ10 <- NA
+
 df3 <- data_cad %>%
-  dplyr::select(record_id, age, gender, edu, who5_1:who5_5, flexer_01:flexer_10)
+  dplyr::select(record_id, age, gender, edu, who5_1:who5_5, flexer_01:flexer_10, erq_01:erq_10)
 df3 <- df3 %>%
   dplyr::rename(CASE = record_id, education = edu, 
                 WHO1 = who5_1, WHO2 = who5_2,  WHO3 = who5_3,  WHO4 = who5_4, WHO5 = who5_5, 
                 FLEXER1 = flexer_01, FLEXER2 = flexer_02, FLEXER3 = flexer_03, FLEXER4 = flexer_04, FLEXER5 = flexer_05,
-                FLEXER6 = flexer_06, FLEXER7 = flexer_07, FLEXER8 = flexer_08, FLEXER9 = flexer_09, FLEXER10 = flexer_10)
+                FLEXER6 = flexer_06, FLEXER7 = flexer_07, FLEXER8 = flexer_08, FLEXER9 = flexer_09, FLEXER10 = flexer_10,
+                ERQ1 = erq_01, ERQ2 = erq_02, ERQ3 = erq_03, ERQ4 = erq_04, ERQ5 = erq_05,
+                ERQ6 = erq_06, ERQ7 = erq_07, ERQ8 = erq_08, ERQ9 = erq_09, ERQ10 = erq_10)
 
 # recode item 7 in study 3
 
@@ -325,6 +340,18 @@ Item_characteristics <- cbind(Item_characteristics,r_it)
 
 # Internal consistency 
 alpha <- psych::alpha(subset(df_complete, select = c(FLEXER1:FLEXER10)))
+
+alpha_EF1 <- psych::alpha(subset(df_complete, select = c("FLEXER1",
+                                                         "FLEXER4",
+                                                         "FLEXER5",
+                                                         "FLEXER6",
+                                                         "FLEXER7",
+                                                         "FLEXER10")))
+alpha_EF2 <- psych::alpha(subset(df_complete, select = c("FLEXER2",
+                                                         "FLEXER3",
+                                                         "FLEXER8",
+                                                         "FLEXER9")))
+
 Item_characteristics$alpha <- alpha$total[["raw_alpha"]]
 rm(Korr)
 
@@ -396,9 +423,7 @@ psych::fa.parallel(efa, fm="mle", fa="both", main = "Parallel Analysis")$fa.valu
 
 # Further analyses...  MAP and VSS 
 psych::nfactors(efa, rotate="oblimin", fm="mle") 
-# MAP 2
-# VSS 2
-# BIC 3
+
 
 # Number of factors PCA!
 ev <- eigen(cor(efa))
@@ -437,34 +462,7 @@ fa2$fit.off # Fit based upon off-diagonal values
 attributes(fa2$loadings)$dimnames[[2]] <- c("?","?")
 psych::fa.diagram(fa2,cut=.10)
 
-##############
 
-# compute WHO-5 Score (sum of all items multiplied by 4)
-
-psych::alpha(subset(df_complete, select = c(WHO1:WHO5)))
-
-df_complete$WHO <- rowSums(df_complete[c("WHO1", "WHO2", "WHO3", "WHO4", "WHO5")]) * 4
-
-cor_ERF_WHO <- cor(df_complete$WHO, df_complete$ERF, method = "spearman", use = "complete.obs")
-
-cor.test(df_complete$WHO, df_complete$ERF, method = "spearman")
-
-ggplot(data = df_complete, mapping = aes(x = ERF, y = WHO)) +
-  geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
-  geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
-  ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
-  theme(
-    legend.title = element_text(),
-    axis.title = element_text(size = 22)
-  ) +
-  xlab("FlexER Score") +
-  ylab("WHO-5 Score") +
-  annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
-           alpha = 1, fill = "white", color = "white") + 
-  annotate("text", x = 3.8, y = 57, 
-         label = bquote(paste(rho) == .(round(cor_ERF_WHO, 3))), 
-         size = 7, color = "black",
-         hjust = 0)  
 
 ############ CONFIRMATORY POWER ANALYSIS
 
@@ -488,23 +486,30 @@ data_icersv <- data_icersv[, lapply(.SD, paste0 , collapse=""), by=set]
 data_icersv <- as.data.frame(data_icersv)
 
 data_icersv <- data_icersv %>%
-  subset(!is.na(set), select = c(set, age, gender, edu,  grep("flexer", colnames(data_icersv))))
+  subset(!is.na(set), select = c(set, age, gender, edu,  grep("flexer", colnames(data_icersv)), grep("erq", colnames(data_icersv))))
 
 data_icersv[, c("age", "gender", "edu")] <- sapply(data_icersv[, c("age", "gender", "edu")], as.numeric)
+
+data_icersv <- data_icersv %>%
+  dplyr::rename(FLEXER1 = flexer_01, FLEXER2 = flexer_02, FLEXER3 = flexer_03, FLEXER4 = flexer_04, FLEXER5 = flexer_05,
+                FLEXER6 = flexer_06, FLEXER7 = flexer_07, FLEXER8 = flexer_08, FLEXER9 = flexer_09, FLEXER10 = flexer_10,
+                ERQ1 = erq_01, ERQ2 = erq_02, ERQ3 = erq_03, ERQ4 = erq_04, ERQ5 = erq_05,
+                ERQ6 = erq_06, ERQ7 = erq_07, ERQ8 = erq_08, ERQ9 = erq_09, ERQ10 = erq_10)
 
 #### Flexible Emotion Regulation Scale - FlexER
 
 # store flexer items in separate df
 # only keep rows with complete flexer questionnaire
 data_CFA <- data_icersv %>% 
+  dplyr::filter((flexer_scale_complete == 2)) %>%
   subset(select = c(set,
-                    grep("flexer", colnames(data_icersv)))) %>% 
-  dplyr::filter((flexer_scale_complete == 2))
+                    grep("FLEXER", colnames(data_icersv))))
+  
 
-data_CFA[, c("flexer_01", "flexer_02", "flexer_03", "flexer_04", "flexer_05", "flexer_06", "flexer_07", "flexer_08", "flexer_09", "flexer_10")] <- sapply(data_CFA[, c("flexer_01", "flexer_02", "flexer_03", "flexer_04", "flexer_05", "flexer_06", "flexer_07", "flexer_08", "flexer_09", "flexer_10")], as.numeric)
+data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")] <- sapply(data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")], as.numeric)
 
 # compute ERF mean score --> lower values reflect higher flexibility
-data_CFA$ERF_mean <- rowMeans(data_CFA[c("flexer_01", "flexer_02", "flexer_03", "flexer_04", "flexer_05", "flexer_06", "flexer_07", "flexer_08", "flexer_09", "flexer_10")])
+data_CFA$ERF_mean <- rowMeans(data_CFA[c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")])
 
 # recode mean score, because we want higher values to reflect higher flexibility
 
@@ -515,12 +520,12 @@ data_CFA$ERF <- 5 - data_CFA$ERF_mean
 # Für ERF1-Items
 
 items_erf1 <-
-  c("flexer_01",
-    "flexer_04",
-    "flexer_05",
-    "flexer_06",
-    "flexer_07",
-    "flexer_10")
+  c("FLEXER1",
+    "FLEXER4",
+    "FLEXER5",
+    "FLEXER6",
+    "FLEXER7",
+    "FLEXER10")
 
 omega_erf1 <- omega(data_CFA[, items_erf1],
                     plot 
@@ -533,10 +538,10 @@ print(omega_erf1$omega.tot)
 # Für ERF2-Items
 
 items_erf2 <-
-  c("flexer_02",
-    "flexer_03",
-    "flexer_08",
-    "flexer_09")
+  c("FLEXER2",
+    "FLEXER3",
+    "FLEXER8",
+    "FLEXER9")
 
 omega_erf2 <- omega(data_CFA[, items_erf2],
                     plot 
@@ -550,16 +555,16 @@ print(omega_erf2$omega.tot)
 # Für Gesamtskala (10 Items)
 
 totalerf <-
-  c("flexer_01",
-    "flexer_04",
-    "flexer_05",
-    "flexer_06",
-    "flexer_07",
-    "flexer_10",
-    "flexer_02",
-    "flexer_03",
-    "flexer_08",
-    "flexer_09")
+  c("FLEXER1",
+    "FLEXER4",
+    "FLEXER5",
+    "FLEXER6",
+    "FLEXER7",
+    "FLEXER10",
+    "FLEXER2",
+    "FLEXER3",
+    "FLEXER8",
+    "FLEXER9")
 
 omega_total <- omega(data_CFA[, totalerf],
                      plot 
@@ -571,14 +576,14 @@ print(omega_total$omega.tot)
 
 ### CONFIRMATORY FACTORY ANALYSES
 
-item_names <- c("flexer_01", "flexer_02", "flexer_03", "flexer_04", "flexer_05",
-                "flexer_06", "flexer_07", "flexer_08", "flexer_09", "flexer_10")
+item_names <- c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5",
+                "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")
 data_CFA[item_names] <- lapply(data_CFA[item_names], ordered)
 
 # model with one factor
 
 model_1factor <- '
-  ERF1 =~ flexer_01 + flexer_02 + flexer_03 + flexer_04 + flexer_05 + flexer_06 + flexer_07 + flexer_08 + flexer_09 + flexer_10 
+  ERF1 =~ FLEXER1 + FLEXER2 + FLEXER3 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER8 + FLEXER9 + FLEXER10 
 '
 model_1factor <- cfa(model_1factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
 semPlot::semPaths(model_1factor, whatLabels="stand")
@@ -589,8 +594,8 @@ lavInspect(model_1factor, "std.lv")$lambda
 # model with two factors
 
 model_2factor <- '
-  ERF1 =~ flexer_01 + flexer_04 + flexer_05 + flexer_06 + flexer_07 + flexer_10
-  ERF2 =~ flexer_02 + flexer_03 + flexer_08 + flexer_09 
+  ERF1 =~ FLEXER1 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER10
+  ERF2 =~ FLEXER2 + FLEXER3 + FLEXER8 + FLEXER9 
 '
 
 model_2factor <- cfa(model_2factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
@@ -640,7 +645,114 @@ summary(power)
 # Power (1 - Beta)         0.968519
 # Implied Alpha/Beta Ratio 1.588268
 
+##############
+#
+# CRITERION VALIDITY
+#
+##############
 
+# compute ERF1 mean score --> lower values reflect higher flexibility
+
+# recode mean score, because we want higher values to reflect higher flexibility
+
+df_complete$ERF1 <- 5 - rowMeans(df_complete[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
+df_complete$ERF2 <- 5 - rowMeans(df_complete[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
+
+
+# compute WHO-5 Score (sum of all items multiplied by 4)
+
+psych::alpha(subset(df_complete, select = c(WHO1:WHO5)))
+
+df_complete$WHO <- rowSums(df_complete[c("WHO1", "WHO2", "WHO3", "WHO4", "WHO5")]) * 4
+
+shapiro.test(df_complete$ERF_mean)
+
+# data:  df_complete$ERF_mean
+# W = 0.98839, p-value = 3.204e-05
+
+shapiro.test(df_complete$WHO)
+# data:  df_complete$WHO
+# W = 0.97387, p-value = 1.553e-09
+
+cor_ERF1_WHO <- cor(df_complete$WHO, df_complete$ERF1, method = "spearman", use = "complete.obs")
+cor_ERF2_WHO <- cor(df_complete$WHO, df_complete$ERF2, method = "spearman", use = "complete.obs")
+cor.test(df_complete$WHO, df_complete$ERF1, method = "spearman")
+cor.test(df_complete$WHO, df_complete$ERF2, method = "spearman")
+
+ggplot(data = df_complete, mapping = aes(x = ERF1, y = WHO)) +
+  geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
+  geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
+  ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
+  theme(
+    legend.title = element_text(),
+    axis.title = element_text(size = 22)
+  ) +
+  xlab("FlexER Score") +
+  ylab("WHO-5 Score") +
+  annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
+           alpha = 1, fill = "white", color = "white") + 
+  annotate("text", x = 3.8, y = 57, 
+           label = bquote(paste(rho) == .(round(cor_ERF1_WHO, 3))), 
+           size = 7, color = "black",
+           hjust = 0)  
+
+ggplot(data = df_complete, mapping = aes(x = ERF2, y = WHO)) +
+  geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
+  geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
+  ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
+  theme(
+    legend.title = element_text(),
+    axis.title = element_text(size = 22)
+  ) +
+  xlab("FlexER Score") +
+  ylab("WHO-5 Score") +
+  annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
+           alpha = 1, fill = "white", color = "white") + 
+  annotate("text", x = 3.8, y = 57, 
+           label = bquote(paste(rho) == .(round(cor_ERF2_WHO, 3))), 
+           size = 7, color = "black",
+           hjust = 0)  
+
+######## ERQ
+
+# add icer sv data to df complete
+
+df_erq <- data_icersv %>% 
+  dplyr::rename(CASE = set) %>%
+  subset(select = c(CASE,
+                    grep("FLEXER", colnames(data_icersv)),
+                    grep("ERQ", colnames(data_icersv))))
+
+df_erq <- rbind(df_erq, df_complete%>%subset(select = c(CASE,
+                                                              grep("FLEXER", colnames(df_complete)),
+                                                              grep("ERQ", colnames(df_complete)))))
+
+df_erq[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")] <- sapply(df_erq[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")], as.numeric)
+df_erq[, c("ERQ1", "ERQ2", "ERQ3", "ERQ4", "ERQ5", "ERQ6", "ERQ7", "ERQ8", "ERQ9", "ERQ10")] <- sapply(df_erq[, c("ERQ1", "ERQ2", "ERQ3", "ERQ4", "ERQ5", "ERQ6", "ERQ7", "ERQ8", "ERQ9", "ERQ10")], as.numeric)
+
+# compute ERF1 mean score --> lower values reflect higher flexibility
+# recode mean score, because we want higher values to reflect higher flexibility
+
+df_erq$ERF1 <- 5 - rowMeans(df_erq[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
+df_erq$ERF2 <- 5 - rowMeans(df_erq[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
+
+df_erq$ERQ_Reap <- rowMeans(df_erq[c("ERQ1", "ERQ3", "ERQ5", "ERQ7", "ERQ8", "ERQ10")])
+df_erq$ERQ_Supp <- rowMeans(df_erq[c("ERQ2", "ERQ4", "ERQ6", "ERQ9")])
+
+# Correlations
+
+cor_ERF1_ERQ_Reap <- cor(df_erq$ERQ_Reap, df_erq$ERF1, method = "spearman", use = "complete.obs")
+cor_ERF1_ERQ_Supp <- cor(df_erq$ERQ_Supp, df_erq$ERF1, method = "spearman", use = "complete.obs")
+cor_ERF2_ERQ_Reap <- cor(df_erq$ERQ_Reap, df_erq$ERF2, method = "spearman", use = "complete.obs")
+cor_ERF2_ERQ_Supp <- cor(df_erq$ERQ_Supp, df_erq$ERF2, method = "spearman", use = "complete.obs")
+
+cor.test(df_erq$ERQ_Reap, df_erq$ERF1, method = "spearman")
+cor.test(df_erq$ERQ_Supp, df_erq$ERF1, method = "spearman")
+cor.test(df_erq$ERQ_Reap, df_erq$ERF2, method = "spearman")
+cor.test(df_erq$ERQ_Supp, df_erq$ERF2, method = "spearman")
+
+cor.test(df_erq$ERF1, df_erq$ERF2, method = "spearman")
+cor.test(df_erq$ERQ_Reap, df_erq$ERQ_Supp, method = "spearman")
 ############
 
 # save workspace image
