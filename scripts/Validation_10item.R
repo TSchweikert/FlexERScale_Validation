@@ -64,7 +64,7 @@ df1 <- df1 %>%
                 FLEXER6 = er_01_6, FLEXER7 = er_01_7, FLEXER8 = er_01_8, FLEXER9 = er_01_9, FLEXER10 = er_01_10,
                 ERQ1 = er08_01, ERQ2 = er08_02, ERQ3 = er08_03, ERQ4 = er08_04, ERQ5 = er08_05,
                 ERQ6 = er08_06, ERQ7 = er08_07, ERQ8 = er08_08, ERQ9 = er08_09, ERQ10 = er08_10)
-                
+df1$sample <- 1               
 
 df2 <- data_berndt %>%
   dplyr::select(CASE, Age, Sex, Education, Occupation, Flex1:Flex10, WHO1:WHO5)
@@ -95,6 +95,8 @@ df2_r$ERQ8 <- NA
 df2_r$ERQ9 <- NA
 df2_r$ERQ10 <- NA
 
+df2_r$sample <- 2
+
 df3 <- data_cad %>%
   dplyr::select(record_id, age, gender, edu, who5_1:who5_5, flexer_01:flexer_10, erq_01:erq_10)
 df3 <- df3 %>%
@@ -118,7 +120,7 @@ df3_r_s <- df3_r %>%
 
 df3_red <- df3_r_s[complete.cases(df3_r_s[,c("age","gender")]), ]
 
-
+df3_red$sample <- 3
 ### COMBINE DATA SETS
 
 df_all <- rbind(df1, df2_r, df3_red)
@@ -411,308 +413,308 @@ MSAi <- unlist(kmo$MSAi)
 cut(MSAi, c(0, .5, .7, .8, .9, 1.0)) %>% table
 kmo$MSA
 
-# all items are above .70 -> at least good
-# Overall MSA = 0.87 which is very good
-
-### EXPLORATORY FACTOR ANALYSIS
-
-# subset of relevant variables
-df_complete %>% dplyr::select( FLEXER1:FLEXER10 ) -> efa
-# parallel analyses for Factor analysis and PCA
-psych::fa.parallel(efa, fm="mle", fa="both", main = "Parallel Analysis")$fa.values # Prarallel analyses suggests 2 factors 
-
-# Further analyses...  MAP and VSS 
-psych::nfactors(efa, rotate="oblimin", fm="mle") 
-
-
-# Number of factors PCA!
-ev <- eigen(cor(efa))
-ev
-# Principle Components!
-ap <- parallel(subject=nrow(efa), var=ncol(efa), rep=100,cent=.05, model ="components")
-nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
-
-plotnScree(nS) # 2 in PCA
-
-# Method: Agreement Approach
-fac <- parameters::n_factors(efa, type = "FA", algorithm = "mle", package = "all")
-print(fac)
-plot(fac)
-fac$Method # 09 of 27 tests support choice of 2 dimensions 
-
-
-# EFA, Inspection of 1 solution 
-fa1 <- psych::fa(efa, fm="ml", nfactors=1, rotate = "oblimin") # further option is to change estimate and to change n.iter if bootstrapping for CI is requested
-psych::print.psych( fa1, cut=0.05,sort = TRUE )
-summary(fa1$communality) # Commonality
-summary(fa1$complexity) # index of complexity
-fa1$RMSEA # fa1$RMSEA[1] or Index
-fa1$fit.off # Fit based upon off-diagonal values
-
-# EFA, Inspection of 2 solution 
-fa2 <- psych::fa( efa, fm="ml", nfactors=2, rotate = "oblimin" )
-psych::print.psych( fa2, sort = TRUE, digits = 3)
-summary(fa2$communality) # Commonality
-summary(fa2$complexity) # index of complexity
-fa2$RMSEA # fa1$RMSEA[1] or Index
-fa2$fit.off # Fit based upon off-diagonal values
-
-## grafical illustration of results
-
-attributes(fa2$loadings)$dimnames[[2]] <- c("?","?")
-psych::fa.diagram(fa2,cut=.10)
-
-
-
-############ CONFIRMATORY POWER ANALYSIS
-
-### DATA IMPORT
-
-# import questionnaire data from ICER-SV Study
-
-data_icersv <- read.csv(here("datasheets", "10item", "ICER_SV_Survey.csv"),
-                        stringsAsFactors = FALSE, header = TRUE,
-                        na.strings = c("", "NA"))
-colnames(data_icersv)[1] <- "set" # rename the first column
-# tidy up data frame:
-# fill subject id in each row and collapse arms into one row per participant
-
-data_icersv <- data_icersv %>% 
-  data.table::as.data.table() %>% 
-  replace(is.na(data_icersv), "")
-
-data_icersv <- data_icersv[, lapply(.SD, paste0 , collapse=""), by=set]
-
-data_icersv <- as.data.frame(data_icersv)
-
-data_icersv <- data_icersv %>%
-  subset(!is.na(set), select = c(set, age, gender, edu,  grep("flexer", colnames(data_icersv)), grep("erq", colnames(data_icersv))))
-
-data_icersv[, c("age", "gender", "edu")] <- sapply(data_icersv[, c("age", "gender", "edu")], as.numeric)
-
-data_icersv <- data_icersv %>%
-  dplyr::rename(FLEXER1 = flexer_01, FLEXER2 = flexer_02, FLEXER3 = flexer_03, FLEXER4 = flexer_04, FLEXER5 = flexer_05,
-                FLEXER6 = flexer_06, FLEXER7 = flexer_07, FLEXER8 = flexer_08, FLEXER9 = flexer_09, FLEXER10 = flexer_10,
-                ERQ1 = erq_01, ERQ2 = erq_02, ERQ3 = erq_03, ERQ4 = erq_04, ERQ5 = erq_05,
-                ERQ6 = erq_06, ERQ7 = erq_07, ERQ8 = erq_08, ERQ9 = erq_09, ERQ10 = erq_10)
-
-#### Flexible Emotion Regulation Scale - FlexER
-
-# store flexer items in separate df
-# only keep rows with complete flexer questionnaire
-data_CFA <- data_icersv %>% 
-  dplyr::filter((flexer_scale_complete == 2)) %>%
-  subset(select = c(set,
-                    grep("FLEXER", colnames(data_icersv))))
+  # all items are above .70 -> at least good
+  # Overall MSA = 0.87 which is very good
   
-
-data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")] <- sapply(data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")], as.numeric)
-
-# compute ERF mean score --> lower values reflect higher flexibility
-data_CFA$ERF_mean <- rowMeans(data_CFA[c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")])
-
-# recode mean score, because we want higher values to reflect higher flexibility
-
-data_CFA$ERF <- 5 - data_CFA$ERF_mean
-
-##### OMEGA
-
-# Für ERF1-Items
-
-items_erf1 <-
-  c("FLEXER1",
-    "FLEXER4",
-    "FLEXER5",
-    "FLEXER6",
-    "FLEXER7",
-    "FLEXER10")
-
-omega_erf1 <- omega(data_CFA[, items_erf1],
-                    plot 
-                    = FALSE)
-
-print(omega_erf1$omega.tot)
-
-# 0.8505307
-
-# Für ERF2-Items
-
-items_erf2 <-
-  c("FLEXER2",
-    "FLEXER3",
-    "FLEXER8",
-    "FLEXER9")
-
-omega_erf2 <- omega(data_CFA[, items_erf2],
-                    plot 
-                    = FALSE)
-
-print(omega_erf2$omega.tot)
-
-# 0.8505307
-
-
-# Für Gesamtskala (10 Items)
-
-totalerf <-
-  c("FLEXER1",
-    "FLEXER4",
-    "FLEXER5",
-    "FLEXER6",
-    "FLEXER7",
-    "FLEXER10",
-    "FLEXER2",
-    "FLEXER3",
-    "FLEXER8",
-    "FLEXER9")
-
-omega_total <- omega(data_CFA[, totalerf],
-                     plot 
-                     = FALSE)
-
-print(omega_total$omega.tot)
-
-# 0.7615312
-
-### CONFIRMATORY FACTORY ANALYSES
-
-item_names <- c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5",
-                "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")
-data_CFA[item_names] <- lapply(data_CFA[item_names], ordered)
-
-# model with one factor
-
-model_1factor <- '
-  ERF1 =~ FLEXER1 + FLEXER2 + FLEXER3 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER8 + FLEXER9 + FLEXER10 
-'
-model_1factor <- cfa(model_1factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
-semPlot::semPaths(model_1factor, whatLabels="stand")
-summary(model_1factor, sta=TRUE, fit.measure =TRUE)
-
-lavInspect(model_1factor, "est")$lambda
-lavInspect(model_1factor, "std.lv")$lambda
-# model with two factors
-
-model_2factor <- '
-  ERF1 =~ FLEXER1 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER10
-  ERF2 =~ FLEXER2 + FLEXER3 + FLEXER8 + FLEXER9 
-'
-
-model_2factor <- cfa(model_2factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
-semPlot::semPaths(model_2factor, whatLabels="stand")
-summary(model_2factor, sta=T,fit.measure =TRUE)
-
-# model comparison
-
-lavTestLRT(model_1factor, model_2factor)
-
-# Scaled Chi-Squared Difference Test (method = “satorra.2000”)
-
-# lavaan->lavTestLRT():  
-#   lavaan NOTE: The “Chisq” column contains standard test 
-# statistics, not the robust test that should be reported per 
-# model. A robust difference test is a function of two standard 
-# (not robust) statistics.
-#               Df AIC BIC   Chisq Chisq diff Df diff Pr(>Chisq)    
-# model_2factor 34          60.367                                  
-# model_1factor 35         307.942     59.722       1  1.093e-14 ***
-#  ---
-#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-### POWER ANALYSIS
-
-# Poweranalyse durchführen
-power <- semPower::semPower.postHoc(0.086, # RMSEA
-                                    "RMSEA",
-                                    alpha = .05,
-                                    N = 162,
-                                    df = 34)
-summary(power)
-
-# semPower: Post hoc power analysis
-
-# F0                       0.251464
-# RMSEA                    0.086000
-# Mc                       0.881851
-
-# df                       34      
-# Num Observations         162     
-# NCP                      40.48570
-
-# Critical Chi-Square      48.60236
-# Alpha                    0.050000
-# Beta                     0.031481
-# Power (1 - Beta)         0.968519
-# Implied Alpha/Beta Ratio 1.588268
-
-##############
-#
-# CRITERION VALIDITY
-#
-##############
-
-# compute ERF1 mean score --> lower values reflect higher flexibility
-
-# recode mean score, because we want higher values to reflect higher flexibility
-
-df_complete$ERF1 <- 5 - rowMeans(df_complete[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
-df_complete$ERF2 <- 5 - rowMeans(df_complete[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
-
-
-# compute WHO-5 Score (sum of all items multiplied by 4)
-
-psych::alpha(subset(df_complete, select = c(WHO1:WHO5)))
-
-df_complete$WHO <- rowSums(df_complete[c("WHO1", "WHO2", "WHO3", "WHO4", "WHO5")]) * 4
-
-shapiro.test(df_complete$ERF_mean)
-
-# data:  df_complete$ERF_mean
-# W = 0.98839, p-value = 3.204e-05
-
-shapiro.test(df_complete$WHO)
-# data:  df_complete$WHO
-# W = 0.97387, p-value = 1.553e-09
-
-cor_ERF1_WHO <- cor(df_complete$WHO, df_complete$ERF1, method = "spearman", use = "complete.obs")
-cor_ERF2_WHO <- cor(df_complete$WHO, df_complete$ERF2, method = "spearman", use = "complete.obs")
-cor.test(df_complete$WHO, df_complete$ERF1, method = "spearman")
-cor.test(df_complete$WHO, df_complete$ERF2, method = "spearman")
-
-ggplot(data = df_complete, mapping = aes(x = ERF1, y = WHO)) +
-  geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
-  geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
-  ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
-  theme(
-    legend.title = element_text(),
-    axis.title = element_text(size = 22)
-  ) +
-  xlab("FlexER Score") +
-  ylab("WHO-5 Score") +
-  annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
-           alpha = 1, fill = "white", color = "white") + 
-  annotate("text", x = 3.8, y = 57, 
-           label = bquote(paste(rho) == .(round(cor_ERF1_WHO, 3))), 
-           size = 7, color = "black",
-           hjust = 0)  
-
-ggplot(data = df_complete, mapping = aes(x = ERF2, y = WHO)) +
-  geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
-  geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
-  ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
-  theme(
-    legend.title = element_text(),
-    axis.title = element_text(size = 22)
-  ) +
-  xlab("FlexER Score") +
-  ylab("WHO-5 Score") +
-  annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
-           alpha = 1, fill = "white", color = "white") + 
-  annotate("text", x = 3.8, y = 57, 
-           label = bquote(paste(rho) == .(round(cor_ERF2_WHO, 3))), 
-           size = 7, color = "black",
-           hjust = 0)  
-
+  ### EXPLORATORY FACTOR ANALYSIS
+  
+  # subset of relevant variables
+  df_complete %>% dplyr::select( FLEXER1:FLEXER10 ) -> efa
+  # parallel analyses for Factor analysis and PCA
+  psych::fa.parallel(efa, fm="mle", fa="both", main = "Parallel Analysis")$fa.values # Prarallel analyses suggests 2 factors 
+  
+  # Further analyses...  MAP and VSS 
+  psych::nfactors(efa, rotate="oblimin", fm="mle") 
+  
+  
+  # Number of factors PCA!
+  ev <- eigen(cor(efa))
+  ev
+  # Principle Components!
+  ap <- parallel(subject=nrow(efa), var=ncol(efa), rep=100,cent=.05, model ="components")
+  nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
+  
+  plotnScree(nS) # 2 in PCA
+  
+  # Method: Agreement Approach
+  fac <- parameters::n_factors(efa, type = "FA", algorithm = "mle", package = "all")
+  print(fac)
+  plot(fac)
+  fac$Method # 09 of 27 tests support choice of 2 dimensions 
+  
+  
+  # EFA, Inspection of 1 solution 
+  fa1 <- psych::fa(efa, fm="ml", nfactors=1, rotate = "oblimin") # further option is to change estimate and to change n.iter if bootstrapping for CI is requested
+  psych::print.psych( fa1, cut=0.05,sort = TRUE )
+  summary(fa1$communality) # Commonality
+  summary(fa1$complexity) # index of complexity
+  fa1$RMSEA # fa1$RMSEA[1] or Index
+  fa1$fit.off # Fit based upon off-diagonal values
+  
+  # EFA, Inspection of 2 solution 
+  fa2 <- psych::fa( efa, fm="ml", nfactors=2, rotate = "oblimin" )
+  psych::print.psych( fa2, sort = TRUE, digits = 3)
+  summary(fa2$communality) # Commonality
+  summary(fa2$complexity) # index of complexity
+  fa2$RMSEA # fa1$RMSEA[1] or Index
+  fa2$fit.off # Fit based upon off-diagonal values
+  
+  ## grafical illustration of results
+  
+  attributes(fa2$loadings)$dimnames[[2]] <- c("?","?")
+  psych::fa.diagram(fa2,cut=.10)
+  
+  
+  
+  ############ CONFIRMATORY POWER ANALYSIS
+  
+  ### DATA IMPORT
+  
+  # import questionnaire data from ICER-SV Study
+  
+  data_icersv <- read.csv(here("datasheets", "10item", "ICER_SV_Survey.csv"),
+                          stringsAsFactors = FALSE, header = TRUE,
+                          na.strings = c("", "NA"))
+  colnames(data_icersv)[1] <- "set" # rename the first column
+  # tidy up data frame:
+  # fill subject id in each row and collapse arms into one row per participant
+  
+  data_icersv <- data_icersv %>% 
+    data.table::as.data.table() %>% 
+    replace(is.na(data_icersv), "")
+  
+  data_icersv <- data_icersv[, lapply(.SD, paste0 , collapse=""), by=set]
+  
+  data_icersv <- as.data.frame(data_icersv)
+  
+  data_icersv <- data_icersv %>%
+    subset(!is.na(set), select = c(set, age, gender, edu,  grep("flexer", colnames(data_icersv)), grep("erq", colnames(data_icersv))))
+  
+  data_icersv[, c("age", "gender", "edu")] <- sapply(data_icersv[, c("age", "gender", "edu")], as.numeric)
+  
+  data_icersv <- data_icersv %>%
+    dplyr::rename(FLEXER1 = flexer_01, FLEXER2 = flexer_02, FLEXER3 = flexer_03, FLEXER4 = flexer_04, FLEXER5 = flexer_05,
+                  FLEXER6 = flexer_06, FLEXER7 = flexer_07, FLEXER8 = flexer_08, FLEXER9 = flexer_09, FLEXER10 = flexer_10,
+                  ERQ1 = erq_01, ERQ2 = erq_02, ERQ3 = erq_03, ERQ4 = erq_04, ERQ5 = erq_05,
+                  ERQ6 = erq_06, ERQ7 = erq_07, ERQ8 = erq_08, ERQ9 = erq_09, ERQ10 = erq_10)
+  
+  #### Flexible Emotion Regulation Scale - FlexER
+  
+  # store flexer items in separate df
+  # only keep rows with complete flexer questionnaire
+  data_CFA <- data_icersv %>% 
+    dplyr::filter((flexer_scale_complete == 2)) %>%
+    subset(select = c(set,
+                      grep("FLEXER", colnames(data_icersv))))
+    
+  
+  data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")] <- sapply(data_CFA[, c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")], as.numeric)
+  
+  # compute ERF mean score --> lower values reflect higher flexibility
+  data_CFA$ERF_mean <- rowMeans(data_CFA[c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")])
+  
+  # recode mean score, because we want higher values to reflect higher flexibility
+  
+  data_CFA$ERF <- 5 - data_CFA$ERF_mean
+  
+  ##### OMEGA
+  
+  # Für ERF1-Items
+  
+  items_erf1 <-
+    c("FLEXER1",
+      "FLEXER4",
+      "FLEXER5",
+      "FLEXER6",
+      "FLEXER7",
+      "FLEXER10")
+  
+  omega_erf1 <- omega(data_CFA[, items_erf1],
+                      plot 
+                      = FALSE)
+  
+  print(omega_erf1$omega.tot)
+  
+  # 0.8505307
+  
+  # Für ERF2-Items
+  
+  items_erf2 <-
+    c("FLEXER2",
+      "FLEXER3",
+      "FLEXER8",
+      "FLEXER9")
+  
+  omega_erf2 <- omega(data_CFA[, items_erf2],
+                      plot 
+                      = FALSE)
+  
+  print(omega_erf2$omega.tot)
+  
+  # 0.8505307
+  
+  
+  # Für Gesamtskala (10 Items)
+  
+  totalerf <-
+    c("FLEXER1",
+      "FLEXER4",
+      "FLEXER5",
+      "FLEXER6",
+      "FLEXER7",
+      "FLEXER10",
+      "FLEXER2",
+      "FLEXER3",
+      "FLEXER8",
+      "FLEXER9")
+  
+  omega_total <- omega(data_CFA[, totalerf],
+                       plot 
+                       = FALSE)
+  
+  print(omega_total$omega.tot)
+  
+  # 0.7615312
+  
+  ### CONFIRMATORY FACTORY ANALYSES
+  
+  item_names <- c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5",
+                  "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")
+  data_CFA[item_names] <- lapply(data_CFA[item_names], ordered)
+  
+  # model with one factor
+  
+  model_1factor <- '
+    ERF1 =~ FLEXER1 + FLEXER2 + FLEXER3 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER8 + FLEXER9 + FLEXER10 
+  '
+  model_1factor <- cfa(model_1factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
+  semPlot::semPaths(model_1factor, whatLabels="stand")
+  summary(model_1factor, sta=TRUE, fit.measure =TRUE)
+  
+  lavInspect(model_1factor, "est")$lambda
+  lavInspect(model_1factor, "std.lv")$lambda
+  # model with two factors
+  
+  model_2factor <- '
+    ERF1 =~ FLEXER1 + FLEXER4 + FLEXER5 + FLEXER6 + FLEXER7 + FLEXER10
+    ERF2 =~ FLEXER2 + FLEXER3 + FLEXER8 + FLEXER9 
+  '
+  
+  model_2factor <- cfa(model_2factor, data = data_CFA, estimator ="WLSMV", ordered = item_names)
+  semPlot::semPaths(model_2factor, whatLabels="stand")
+  summary(model_2factor, sta=T,fit.measure =TRUE)
+  
+  # model comparison
+  
+  lavTestLRT(model_1factor, model_2factor)
+  
+  # Scaled Chi-Squared Difference Test (method = “satorra.2000”)
+  
+  # lavaan->lavTestLRT():  
+  #   lavaan NOTE: The “Chisq” column contains standard test 
+  # statistics, not the robust test that should be reported per 
+  # model. A robust difference test is a function of two standard 
+  # (not robust) statistics.
+  #               Df AIC BIC   Chisq Chisq diff Df diff Pr(>Chisq)    
+  # model_2factor 34          60.367                                  
+  # model_1factor 35         307.942     59.722       1  1.093e-14 ***
+  #  ---
+  #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+  
+  ### POWER ANALYSIS
+  
+  # Poweranalyse durchführen
+  power <- semPower::semPower.postHoc(0.086, # RMSEA
+                                      "RMSEA",
+                                      alpha = .05,
+                                      N = 162,
+                                      df = 34)
+  summary(power)
+  
+  # semPower: Post hoc power analysis
+  
+  # F0                       0.251464
+  # RMSEA                    0.086000
+  # Mc                       0.881851
+  
+  # df                       34      
+  # Num Observations         162     
+  # NCP                      40.48570
+  
+  # Critical Chi-Square      48.60236
+  # Alpha                    0.050000
+  # Beta                     0.031481
+  # Power (1 - Beta)         0.968519
+  # Implied Alpha/Beta Ratio 1.588268
+  
+  ##############
+  #
+  # CRITERION VALIDITY
+  #
+  ##############
+  
+  # compute ERF1 mean score --> lower values reflect higher flexibility
+  
+  # recode mean score, because we want higher values to reflect higher flexibility
+  
+  df_complete$ERF1 <- 5 - rowMeans(df_complete[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
+  df_complete$ERF2 <- 5 - rowMeans(df_complete[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
+  
+  
+  # compute WHO-5 Score (sum of all items multiplied by 4)
+  
+  psych::alpha(subset(df_complete, select = c(WHO1:WHO5)))
+  
+  df_complete$WHO <- rowSums(df_complete[c("WHO1", "WHO2", "WHO3", "WHO4", "WHO5")]) * 4
+  
+  shapiro.test(df_complete$ERF_mean)
+  
+  # data:  df_complete$ERF_mean
+  # W = 0.98839, p-value = 3.204e-05
+  
+  shapiro.test(df_complete$WHO)
+  # data:  df_complete$WHO
+  # W = 0.97387, p-value = 1.553e-09
+  
+  cor_ERF1_WHO <- cor(df_complete$WHO, df_complete$ERF1, method = "spearman", use = "complete.obs")
+  cor_ERF2_WHO <- cor(df_complete$WHO, df_complete$ERF2, method = "spearman", use = "complete.obs")
+  cor.test(df_complete$WHO, df_complete$ERF1, method = "spearman")
+  cor.test(df_complete$WHO, df_complete$ERF2, method = "spearman")
+  
+  ggplot(data = df_complete, mapping = aes(x = ERF1, y = WHO)) +
+    geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
+    geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
+    ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
+    theme(
+      legend.title = element_text(),
+      axis.title = element_text(size = 22)
+    ) +
+    xlab("FlexER Score") +
+    ylab("WHO-5 Score") +
+    annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
+             alpha = 1, fill = "white", color = "white") + 
+    annotate("text", x = 3.8, y = 57, 
+             label = bquote(paste(rho) == .(round(cor_ERF1_WHO, 3))), 
+             size = 7, color = "black",
+             hjust = 0)  
+  
+  ggplot(data = df_complete, mapping = aes(x = ERF2, y = WHO)) +
+    geom_jitter(color = "gray", size = 3, width = 0.2, height = 0) +
+    geom_smooth(method = "lm", se=FALSE, color = "darkred", linewidth = 2) +
+    ggprism::theme_prism(base_size = 20, base_line_size = 0.5, base_fontface = "plain", base_family = "sans") +
+    theme(
+      legend.title = element_text(),
+      axis.title = element_text(size = 22)
+    ) +
+    xlab("FlexER Score") +
+    ylab("WHO-5 Score") +
+    annotate("rect", xmin = 0.4, xmax = 1.06, ymin = 58 , ymax = 62, 
+             alpha = 1, fill = "white", color = "white") + 
+    annotate("text", x = 3.8, y = 57, 
+             label = bquote(paste(rho) == .(round(cor_ERF2_WHO, 3))), 
+             size = 7, color = "black",
+             hjust = 0)  
+  
 ######## ERQ
 
 # add icer sv data to df complete
@@ -739,6 +741,10 @@ df_erq$ERF2 <- 5 - rowMeans(df_erq[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")
 df_erq$ERQ_Reap <- rowMeans(df_erq[c("ERQ1", "ERQ3", "ERQ5", "ERQ7", "ERQ8", "ERQ10")])
 df_erq$ERQ_Supp <- rowMeans(df_erq[c("ERQ2", "ERQ4", "ERQ6", "ERQ9")])
 
+# Cronbachs Alpha
+psych::alpha(subset(df_erq, select = c(ERQ1, ERQ3, ERQ5, ERQ7, ERQ8, ERQ10)))
+psych::alpha(subset(df_erq, select = c(ERQ2, ERQ4, ERQ6, ERQ9)))
+
 # Correlations
 
 cor_ERF1_ERQ_Reap <- cor(df_erq$ERQ_Reap, df_erq$ERF1, method = "spearman", use = "complete.obs")
@@ -753,7 +759,6 @@ cor.test(df_erq$ERQ_Supp, df_erq$ERF2, method = "spearman")
 
 cor.test(df_erq$ERF1, df_erq$ERF2, method = "spearman")
 cor.test(df_erq$ERQ_Reap, df_erq$ERQ_Supp, method = "spearman")
-############
 
 # save workspace image
 
