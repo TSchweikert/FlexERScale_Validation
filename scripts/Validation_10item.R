@@ -207,6 +207,9 @@ df_complete$ERF_mean <- rowMeans(df_complete[c("FLEXER1", "FLEXER2", "FLEXER3", 
 
 df_complete$ERF <- 5 - df_complete$ERF_mean
 
+df_complete$ERF1 <- 5 - rowMeans(df_complete[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
+df_complete$ERF2 <- 5 - rowMeans(df_complete[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
+
 # descriptive statistics
 
 df_complete %>%
@@ -224,7 +227,7 @@ ggplot(erf_plot, aes(key,value))+
 # Item Characteristics
 
 df_complete %>%
-  dplyr::select(FLEXER1:FLEXER10,ERF) %>%
+  dplyr::select(FLEXER1:FLEXER10,ERF,ERF1,ERF2) %>%
   psych::describe() %>%
   as.data.frame() %>%
   dplyr::select(c(n,mean,sd,median,min,max)) -> Item_characteristics
@@ -362,6 +365,8 @@ Item_characteristics %>%
 
 Characteristics <- sjPlot::tab_itemscale(df_complete[c("FLEXER1", "FLEXER2", "FLEXER3", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER8", "FLEXER9", "FLEXER10")])
 
+
+
 ### EXPLORATORY FACTOR ANALYSIS - PREREQ
 
 # Testing the Multivariate Normal Distribution, however, it becomes unsurprising. Possible test:
@@ -464,8 +469,11 @@ kmo$MSA
   attributes(fa2$loadings)$dimnames[[2]] <- c("?","?")
   psych::fa.diagram(fa2,cut=.10)
   
+  efa$ERF1 <- 5 - rowMeans(df_complete[c("FLEXER1", "FLEXER4", "FLEXER5", "FLEXER6", "FLEXER7", "FLEXER10")])
+  efa$ERF2 <- 5 - rowMeans(df_complete[c("FLEXER2", "FLEXER3", "FLEXER8", "FLEXER9")])
   
-  
+  cor.test(efa$ERF1, efa$ERF2, method = "spearman")
+
   ############ CONFIRMATORY POWER ANALYSIS
   
   ### DATA IMPORT
